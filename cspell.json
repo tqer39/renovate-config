@@ -1,0 +1,28 @@
+{
+  "files": [
+    "**",
+    ".*/**"
+  ],
+  "ignorePaths": [
+    ".git",
+    ".gitignore"
+  ],
+  "words": [
+    "autobuild",
+    "Autobuild",
+    "autofix",
+    "automerge",
+    "buildscript",
+    "codeql",
+    "kentaro",
+    "markdownlint",
+    "nodenv",
+    "ooyama",
+    "pyenv",
+    "rinchsan",
+    "shellcheck",
+    "textlint",
+    "textlintcache",
+    "tqer"
+  ]
+}
