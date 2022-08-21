@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "automerge": true,
+      "groupName": "Terraform",
+      "major": {
+        "automerge": false
+      },
+      "matchManagers": [
+        "terraform"
+      ]
+    }
+  ]
+}

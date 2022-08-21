@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "automerge": true,
+      "groupName": "TypeScript Minor",
+      "major": {
+        "automerge": false
+      },
+      "matchPackagePatterns": [
+        "^@types/"
+      ]
+    }
+  ]
+}
