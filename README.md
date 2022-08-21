@@ -1,2 +1,3 @@
 # renovate-config
+
 Renovate Configuration.
