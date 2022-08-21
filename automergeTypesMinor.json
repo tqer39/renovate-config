@@ -3,6 +3,7 @@
   "packageRules": [
     {
       "automerge": true,
+      "groupName": "TypeScript Minor",
       "major": {
         "automerge": false
       },

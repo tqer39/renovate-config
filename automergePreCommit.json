@@ -4,6 +4,7 @@
     {
       "automerge": true,
       "enable": true,
+      "groupName": "pre-commit",
       "matchManagers": [
         "pre-commit"
       ]

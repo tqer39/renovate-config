@@ -4,6 +4,7 @@
     {
       "automerge": true,
       "enable": true,
+      "groupName": "GitHub Actions",
       "major": {
         "automerge": false
       },

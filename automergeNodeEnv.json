@@ -3,6 +3,7 @@
   "packageRules": [
     {
       "automerge": true,
+      "groupName": "nodenv",
       "major": {
         "automerge": false
       },
