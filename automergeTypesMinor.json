@@ -2,13 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "^@types/"
-      ],
       "automerge": true,
       "major": {
         "automerge": false
-      }
+      },
+      "matchPackagePatterns": [
+        "^@types/"
+      ]
     }
   ]
 }
