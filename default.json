@@ -11,6 +11,7 @@
     "github>tqer39/renovate-config:automergeTypesMinor",
     "github>tqer39/renovate-config:dependencyDashboard",
     "github>tqer39/renovate-config:labels",
+    "github>tqer39/renovate-config:preCommit",
     "github>tqer39/renovate-config:separateMajorMinor",
     "github>tqer39/renovate-config:separateMultipleMajor",
     "github>tqer39/renovate-config:timezone"
