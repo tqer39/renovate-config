@@ -3,32 +3,15 @@
   "packageRules": [
     {
       "automerge": true,
-      "groupName": "GitHub Actions",
       "major": {
+        "automerge": false
+      },
+      "minor": {
         "automerge": false
       },
       "matchManagers": [
         "github-actions"
       ]
-    },
-    {
-      "packageNames": [
-        "actions/checkout",
-        "actions/cache",
-        "aws-actions/configure-aws-credentials"
-      ],
-      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?"
-    }
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "uses: (?<depName>.*?)@(?<currentValue>.*?)\n"
-      ],
-      "datasourceTemplate": "github-releases"
     }
   ]
 }
