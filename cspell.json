@@ -20,6 +20,7 @@
     "nodenv",
     "ooyama",
     "pyenv",
+    "reviewdog",
     "rinchsan",
     "shellcheck",
     "SSIA",
