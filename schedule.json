@@ -1,4 +1,0 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "schedule": "after 9:00 before 18:00 every weekday except after 13:00 before 14:00"
-}

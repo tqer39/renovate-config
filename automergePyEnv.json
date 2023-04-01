@@ -3,7 +3,6 @@
   "packageRules": [
     {
       "automerge": true,
-      "groupName": "pyenv",
       "major": {
         "automerge": false
       },

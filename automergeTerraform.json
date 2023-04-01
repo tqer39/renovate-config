@@ -3,8 +3,10 @@
   "packageRules": [
     {
       "automerge": true,
-      "groupName": "Terraform",
       "major": {
+        "automerge": false
+      },
+      "minor": {
         "automerge": false
       },
       "matchManagers": [
