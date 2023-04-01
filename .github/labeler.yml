@@ -1,0 +1,27 @@
+"editorconfig":
+  - ".editorconfig"
+
+"document":
+  - "**/*.md"
+  - "**/*.txt"
+  - "**/*.rst"
+  - "LICENSE"
+
+"terraform":
+  - ".github/actions/terraform**/action.yml"
+  - ".github/workflows/terraform**.yml"
+
+"textlint":
+  - "**/.textlint*"
+
+"yamllint":
+  - "**/.yamllint"
+
+"markdownlint":
+  - "**/.markdownlint*.json"
+
+"asdf":
+  - "**/.tool-versions"
+
+"actionlint":
+  - ".github/workflows/actionlint.yml"
