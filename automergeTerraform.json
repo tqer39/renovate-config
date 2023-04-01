@@ -1,5 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^.tool-versions$"
+      ],
+      "matchStrings": [
+        "terraform (?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "hashicorp/terraform",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ],
   "packageRules": [
     {
       "automerge": true,
@@ -11,6 +24,35 @@
       },
       "matchManagers": [
         "terraform"
+      ]
+    },
+    {
+      "automerge": true,
+      "major": {
+        "automerge": false
+      },
+      "minor": {
+        "automerge": false
+      },
+      "groupName": "terraform",
+      "matchManagers": [
+        "regex"
+      ]
+    },
+    {
+      "automerge": true,
+      "major": {
+        "automerge": false
+      },
+      "minor": {
+        "automerge": false
+      },
+      "groupName": "terraform",
+      "matchManagers": [
+        "terraform"
+      ],
+      "matchDepTypes": [
+        "required_version"
       ]
     }
   ]
