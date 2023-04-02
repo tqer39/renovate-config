@@ -2,10 +2,14 @@
 name: pre-commit
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
 
 jobs:
   pre-commit:
+    name: pre-commit
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
