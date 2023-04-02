@@ -2,6 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
+      "addLabels": [
+        "github-actions"
+      ],
       "automerge": true,
       "major": {
         "automerge": false

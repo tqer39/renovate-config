@@ -2,7 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
+      "addLabels": ["pyenv"],
       "automerge": true,
+      "allowedVersions": "<3.10",
       "major": {
         "automerge": false
       },
