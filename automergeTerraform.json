@@ -15,6 +15,7 @@
   ],
   "packageRules": [
     {
+      "addLabels": ["terraform"],
       "automerge": true,
       "major": {
         "automerge": false
@@ -27,6 +28,7 @@
       ]
     },
     {
+      "addLabels": ["terraform"],
       "automerge": true,
       "major": {
         "automerge": false
@@ -40,6 +42,7 @@
       ]
     },
     {
+      "addLabels": ["terraform"],
       "automerge": true,
       "major": {
         "automerge": false
