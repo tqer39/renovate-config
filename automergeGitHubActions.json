@@ -9,9 +9,6 @@
       "major": {
         "automerge": false
       },
-      "minor": {
-        "automerge": false
-      },
       "matchManagers": [
         "github-actions"
       ]
