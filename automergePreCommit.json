@@ -15,6 +15,12 @@
       "matchManagers": [
         "pre-commit"
       ]
+    },
+    {
+      "matchPackageNames": ["renovatebot/pre-commit-hooks"],
+      "minor": {
+        "automerge": true
+      }
     }
   ]
 }

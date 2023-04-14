@@ -21,6 +21,7 @@
     "nodenv",
     "ooyama",
     "pyenv",
+    "renovatebot",
     "reviewdog",
     "rinchsan",
     "shellcheck",
