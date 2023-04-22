@@ -17,7 +17,10 @@
       ]
     },
     {
-      "matchPackageNames": ["renovatebot/pre-commit-hooks"],
+      "matchPackageNames": [
+        "renovatebot/pre-commit-hooks",
+        "adrienverge/yamllint"
+      ],
       "minor": {
         "automerge": true
       }

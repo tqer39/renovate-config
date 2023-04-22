@@ -8,6 +8,7 @@
     ".gitignore"
   ],
   "words": [
+    "adrienverge",
     "autobuild",
     "Autobuild",
     "autofix",
@@ -16,6 +17,7 @@
     "CODEOWNERS",
     "codeql",
     "datasource",
+    "Datasources",
     "kentaro",
     "markdownlint",
     "nodenv",
