@@ -17,6 +17,7 @@
     "CODEOWNERS",
     "codeql",
     "datasource",
+    "Datasources",
     "kentaro",
     "markdownlint",
     "nodenv",

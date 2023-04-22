@@ -57,6 +57,16 @@
       "matchDepTypes": [
         "required_version"
       ]
+    },
+    {
+      "addLabels": ["terraform"],
+      "matchManagers": [
+        "terraform"
+      ],
+      "matchPackageNames": ["aws", "github"],
+      "minor": {
+        "automerge": true
+      }
     }
   ]
 }
