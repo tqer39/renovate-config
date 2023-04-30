@@ -19,7 +19,8 @@
     {
       "matchPackageNames": [
         "renovatebot/pre-commit-hooks",
-        "adrienverge/yamllint"
+        "adrienverge/yamllint",
+        "antonbabenko/pre-commit-terraform"
       ],
       "minor": {
         "automerge": true
