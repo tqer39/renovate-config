@@ -3,15 +3,19 @@
   "packageRules": [
     {
       "addLabels": [
-        "nodenv"
+        "npm", "node", "nodenv"
       ],
+      "allowedVersions": "<19.0.0",
+      "matchCurrentVersion": "<19.0.0",
       "automerge": true,
       "major": {
         "automerge": false
       },
       "matchManagers": [
         "nodenv"
-      ]
+      ],
+      "rangeStrategy": "replace",
+      "supportPolicy": ["lts"]
     }
   ]
 }
