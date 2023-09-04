@@ -12,15 +12,6 @@
       "matchManagers": [
         "github-actions"
       ]
-    },
-    {
-      "matchPackagePatterns": [
-        "^streetsidesoftware/cspell-cli$"
-      ],
-      "matchUpdateTypes": [
-        "minor"
-      ],
-      "automerge": true
     }
   ]
 }

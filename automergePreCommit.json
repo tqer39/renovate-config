@@ -21,7 +21,8 @@
         "adrienverge/yamllint",
         "antonbabenko/pre-commit-terraform",
         "igorshubovych/markdownlint-cli",
-        "renovatebot/pre-commit-hooks"
+        "renovatebot/pre-commit-hooks",
+        "streetsidesoftware/cspell-cli"
       ],
       "minor": {
         "automerge": true
