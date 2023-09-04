@@ -14,8 +14,8 @@
       ]
     },
     {
-      "matchPackageNames": [
-        "streetsidesoftware/cspell-cli"
+      "matchPackagePatterns": [
+        "^streetsidesoftware/cspell-cli$"
       ],
       "matchUpdateTypes": [
         "minor"
