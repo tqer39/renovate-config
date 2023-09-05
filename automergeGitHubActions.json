@@ -12,6 +12,15 @@
       "matchManagers": [
         "github-actions"
       ]
+    },
+    {
+      "matchPackageNames": [
+        "actions/checkout"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": true
     }
   ]
 }
