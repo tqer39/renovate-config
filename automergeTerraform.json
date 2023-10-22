@@ -63,7 +63,7 @@
       "matchManagers": [
         "terraform"
       ],
-      "matchPackageNames": ["aws", "github"],
+      "matchPackageNames": ["aws", "github", "vercel"],
       "minor": {
         "automerge": true
       }
