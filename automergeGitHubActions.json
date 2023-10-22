@@ -18,7 +18,9 @@
         "github-actions"
       ],
       "matchPackageNames": [
-        "actions/checkout"
+        "actions/checkout",
+        "aws-actions/configure-aws-credentials",
+        "terraform-linters/setup-tflint"
       ],
       "matchUpdateTypes": [
         "major"
