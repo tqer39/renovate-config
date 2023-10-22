@@ -36,7 +36,8 @@
         "pre-commit"
       ],
       "matchPackageNames": [
-        "renovatebot/pre-commit-hooks"
+        "renovatebot/pre-commit-hooks",
+        "terraform-linters/setup-tflint"
       ],
       "minor": {
         "automerge": true
