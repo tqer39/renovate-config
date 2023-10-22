@@ -19,7 +19,8 @@
       ],
       "matchPackageNames": [
         "actions/checkout",
-        "aws-actions/configure-aws-credentials"
+        "aws-actions/configure-aws-credentials",
+        "terraform-linters/setup-tflint"
       ],
       "matchUpdateTypes": [
         "major"
