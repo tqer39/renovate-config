@@ -17,6 +17,9 @@
       ]
     },
     {
+      "addLabels": [
+        "pre-commit"
+      ],
       "matchPackageNames": [
         "adrienverge/yamllint",
         "antonbabenko/pre-commit-terraform",
