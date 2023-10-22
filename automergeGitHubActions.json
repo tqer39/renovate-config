@@ -18,7 +18,8 @@
         "github-actions"
       ],
       "matchPackageNames": [
-        "actions/checkout"
+        "actions/checkout",
+        "aws-actions/configure-aws-credentials"
       ],
       "matchUpdateTypes": [
         "major"
