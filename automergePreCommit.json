@@ -17,14 +17,31 @@
       ]
     },
     {
+      "addLabels": [
+        "pre-commit"
+      ],
       "matchPackageNames": [
         "adrienverge/yamllint",
         "antonbabenko/pre-commit-terraform",
         "igorshubovych/markdownlint-cli",
-        "renovatebot/pre-commit-hooks",
-        "streetsidesoftware/cspell-cli"
+        "streetsidesoftware/cspell-cli",
+        "pre-commit/pre-commit-hooks"
       ],
       "minor": {
+        "automerge": true
+      }
+    },
+    {
+      "addLabels": [
+        "pre-commit"
+      ],
+      "matchPackageNames": [
+        "renovatebot/pre-commit-hooks"
+      ],
+      "minor": {
+        "automerge": true
+      },
+      "major": {
         "automerge": true
       }
     }
