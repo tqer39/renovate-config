@@ -6,9 +6,9 @@
         "github-actions"
       ],
       "automerge": true,
-      "major": {
-        "automerge": false
-      },
+      "matchUpdateTypes": [
+        "minor", "patch"
+      ],
       "matchManagers": [
         "github-actions"
       ]
@@ -17,28 +17,44 @@
       "addLabels": [
         "github-actions"
       ],
-      "matchPackageNames": [
-        "actions/checkout",
-        "aws-actions/configure-aws-credentials",
-        "terraform-linters/setup-tflint"
-      ],
+      "automerge": true,
       "matchUpdateTypes": [
         "major"
       ],
-      "automerge": true
+      "matchPackageNames": [
+        "actions/cache",
+        "actions/checkout",
+        "actions/labeler",
+        "actions/setup-python",
+        "actions/setup-node",
+        "aws-actions/amazon-ecr-login",
+        "aws-actions/aws-secretsmanager-get-secrets",
+        "aws-actions/configure-aws-credentials",
+        "actions/upload-pages-artifact@v1",
+        "DataDog/synthetics-ci-github-action",
+        "docker/build-push-action",
+        "docker/setup-qemu-action",
+        "docker/setup-buildx-action",
+        "hashicorp/setup-terraform",
+        "kentaro-m/auto-assign-action",
+        "pnpm/action-setup"
+      ]
     },
     {
+      "groupName": [
+        "GitHub Page Actions"
+      ],
       "addLabels": [
-        "github-actions"
+        "github-actions", "GitHub Pages"
       ],
-      "matchPackageNames": [
-        "tflint"
-      ],
+      "automerge": true,
       "matchUpdateTypes": [
-        "minor",
         "major"
       ],
-      "automerge": true
+      "matchPackageNames": [
+        "actions/configure-pages",
+        "actions/deploy-pages"
+      ]
     }
   ]
 }
