@@ -5,6 +5,10 @@ on:
   pull_request:
     types: [opened, ready_for_review]
 
+concurrency:
+  group: auto-assign-${ github.ref }
+  cancel-in-progress: true
+
 jobs:
   add-reviews:
     permissions:
