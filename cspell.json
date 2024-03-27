@@ -1,4 +1,5 @@
 {
+  "dictionaries": ["custom-words"],
   "files": [
     "**",
     ".*/**"
@@ -7,31 +8,11 @@
     ".git",
     ".gitignore"
   ],
-  "words": [
-    "adrienverge",
-    "antonbabenko",
-    "autobuild",
-    "Autobuild",
-    "autofix",
-    "automerge",
-    "buildscript",
-    "CODEOWNERS",
-    "codeql",
-    "datasource",
-    "Datasources",
-    "igorshubovych",
-    "kentaro",
-    "markdownlint",
-    "nodenv",
-    "ooyama",
-    "pyenv",
-    "renovatebot",
-    "reviewdog",
-    "rinchsan",
-    "shellcheck",
-    "SSIA",
-    "textlint",
-    "textlintcache",
-    "tqer"
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./.cspell/custom-words.txt",
+      "addWords": true
+    }
   ]
 }
