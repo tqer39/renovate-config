@@ -11,7 +11,7 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 5
     steps:
       - name: Auto Assign
         uses: kentaro-m/auto-assign-action@v2.0.0
