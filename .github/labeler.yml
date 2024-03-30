@@ -1,30 +1,48 @@
+---
 editorconfig:
-  - .editorconfig
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".editorconfig"
 
 document:
-  - "**/*.md"
-  - "**/*.txt"
-  - "**/*.rst"
-  - LICENSE
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
+          - "**/*.txt"
+          - "**/*.rst"
+          - "LICENSE"
 
 terraform:
-  - .github/actions/terraform**/action.yml
-  - .github/workflows/terraform**.yml
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/actions/terraform**/action.yml"
+          - ".github/workflows/terraform**.yml"
 
 textlint:
-  - "**/.textlint*"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/.textlint*"
 
 yamllint:
-  - "**/.yamllint"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/.yamllint"
 
 markdownlint:
-  - "**/.markdownlint*.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/.markdownlint*.json"
 
 asdf:
-  - "**/.tool-versions"
+  - changed-files:
+      - any-glob-to-any-file: -"**/.tool-versions"
 
 actionlint:
-  - .github/workflows/actionlint.yml
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/.github/workflows/actionlint.yml"
 
 CODEOWNERS:
-  - CODEOWNERS
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/CODEOWNERS"
