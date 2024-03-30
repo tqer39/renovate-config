@@ -1,5 +1,6 @@
+---
 editorconfig:
-  - .editorconfig
+  - ".editorconfig"
 
 document:
   - "**/*.md"
