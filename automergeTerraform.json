@@ -17,25 +17,6 @@
     {
       "addLabels": ["terraform"],
       "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "minor": {
-        "automerge": false
-      },
-      "matchManagers": [
-        "terraform"
-      ]
-    },
-    {
-      "addLabels": ["terraform"],
-      "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "minor": {
-        "automerge": false
-      },
       "groupName": "terraform",
       "matchManagers": [
         "regex"
@@ -44,29 +25,10 @@
     {
       "addLabels": ["terraform"],
       "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "minor": {
-        "automerge": false
-      },
-      "groupName": "terraform",
       "matchManagers": [
         "terraform"
       ],
-      "matchDepTypes": [
-        "required_version"
-      ]
-    },
-    {
-      "addLabels": ["terraform"],
-      "matchManagers": [
-        "terraform"
-      ],
-      "matchPackageNames": ["aws", "github", "vercel"],
-      "minor": {
-        "automerge": true
-      }
+      "matchPackageNames": ["aws", "github", "vercel"]
     }
   ]
 }
