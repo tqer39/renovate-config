@@ -16,4 +16,4 @@ jobs:
       pull-requests: write
     timeout-minutes: 5
     steps:
-      - uses: actions/labeler@v4
+      - uses: actions/labeler@v5
