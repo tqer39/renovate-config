@@ -1,29 +1,30 @@
 ---
 editorconfig:
   - changed-files: ["**/.editorconfig"]
+# document:
+#   - changed-files: ["**/*.md", "**/*.txt", "**/*.rst", "LICENSE"]
 
-document:
-  - changed-files: ["**/*.md", "**/*.txt", "**/*.rst", "LICENSE"]
+# terraform:
+#   - changed-files:
+#       [
+#         ".github/actions/terraform**/action.yml",
+#         ".github/workflows/terraform**.yml",
+#       ]
 
-terraform:
-  - changed-files:
-      - ".github/actions/terraform**/action.yml"
-      - ".github/workflows/terraform**.yml"
+# textlint:
+#   - changed-files: ["**/.textlint*"]
 
-textlint:
-  - changed-files: ["**/.textlint*"]
+# yamllint:
+#   - changed-files: ["**/.yamllint"]
 
-yamllint:
-  - changed-files: ["**/.yamllint"]
+# markdownlint:
+#   - changed-files: ["**/.markdownlint*.json"]
 
-markdownlint:
-  - changed-files: ["**/.markdownlint*.json"]
+# asdf:
+#   - changed-files: ["**/.tool-versions"]
 
-asdf:
-  - changed-files: ["**/.tool-versions"]
+# actionlint:
+#   - changed-files: ["**/.github/workflows/actionlint.yml"]
 
-actionlint:
-  - changed-files: ["**/.github/workflows/actionlint.yml"]
-
-CODEOWNERS:
-  - changed-files: ["**/CODEOWNERS"]
+# CODEOWNERS:
+#   - changed-files: ["**/CODEOWNERS"]
