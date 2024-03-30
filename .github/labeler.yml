@@ -7,10 +7,8 @@ document:
 
 terraform:
   - changed-files:
-      [
-        ".github/actions/terraform**/action.yml",
-        ".github/workflows/terraform**.yml",
-      ]
+      - ".github/actions/terraform**/action.yml"
+      - ".github/workflows/terraform**.yml"
 
 textlint:
   - changed-files: ["**/.textlint*"]
