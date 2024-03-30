@@ -8,8 +8,8 @@ document:
   - LICENSE
 
 terraform:
-  - .github/actions/terraform**/action.yml
-  - .github/workflows/terraform**.yml
+  - ".github/actions/terraform**/action.yml"
+  - ".github/workflows/terraform**.yml"
 
 textlint:
   - "**/.textlint*"
