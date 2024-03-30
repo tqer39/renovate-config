@@ -6,7 +6,7 @@ document:
   - changed-files: ["**/*.md", "**/*.txt", "**/*.rst", "LICENSE"]
 
 terraform:
-  - changed-files: >-
+  - changed-files:
       [
         ".github/actions/terraform**/action.yml",
         ".github/workflows/terraform**.yml",
