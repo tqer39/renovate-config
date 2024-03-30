@@ -6,7 +6,11 @@ document:
   - changed-files: ["**/*.md", "**/*.txt", "**/*.rst", "LICENSE"]
 
 terraform:
-  - changed-files: [".github/actions/terraform**/action.yml", ".github/workflows/terraform**.yml"]
+  - changed-files:
+      [
+        ".github/actions/terraform**/action.yml",
+        ".github/workflows/terraform**.yml",
+      ]
 
 textlint:
   - changed-files: ["**/.textlint*"]
