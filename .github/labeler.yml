@@ -1,6 +1,7 @@
 ---
 editorconfig:
-  - changed-files: ["**/.editorconfig"]
+  - changed-files:
+      - "**/.editorconfig"
 # document:
 #   - changed-files: ["**/*.md", "**/*.txt", "**/*.rst", "LICENSE"]
 
