@@ -6,44 +6,9 @@
         "pre-commit"
       ],
       "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "minor": {
-        "automerge": false
-      },
       "matchManagers": [
         "pre-commit"
       ]
-    },
-    {
-      "addLabels": [
-        "pre-commit"
-      ],
-      "matchPackageNames": [
-        "adrienverge/yamllint",
-        "antonbabenko/pre-commit-terraform",
-        "igorshubovych/markdownlint-cli",
-        "streetsidesoftware/cspell-cli",
-        "pre-commit/pre-commit-hooks"
-      ],
-      "minor": {
-        "automerge": true
-      }
-    },
-    {
-      "addLabels": [
-        "pre-commit"
-      ],
-      "matchPackageNames": [
-        "renovatebot/pre-commit-hooks"
-      ],
-      "minor": {
-        "automerge": true
-      },
-      "major": {
-        "automerge": true
-      }
     }
   ]
 }
