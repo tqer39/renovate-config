@@ -19,7 +19,12 @@
       "automerge": true,
       "groupName": "terraform",
       "matchManagers": [
+        "terraform",
         "regex"
+      ],
+      "matchPackageNames": ["aws", "github", "vercel"],
+      "matchDepTypes": [
+        "required_version"
       ]
     },
     {
