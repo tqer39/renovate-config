@@ -26,7 +26,6 @@
       "matchDepTypes": [
         "required_version"
       ]
-      ]
     },
     {
       "addLabels": ["terraform"],
