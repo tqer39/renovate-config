@@ -10,7 +10,8 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "hashicorp/terraform",
-      "extractVersionTemplate": "^v(?<version>.*)$"
+      "extractVersionTemplate": "^v(?<version>.*)$",
+      "automerge": true
     }
   ]
 }
