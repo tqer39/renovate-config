@@ -12,20 +12,5 @@
       "depNameTemplate": "hashicorp/terraform",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
-  ],
-  "packageRules": [
-    {
-      "addLabels": ["terraform"],
-      "automerge": true,
-      "groupName": "terraform",
-      "matchManagers": [
-        "terraform",
-        "regex"
-      ],
-      "matchPackageNames": ["aws", "github", "vercel"],
-      "matchDepTypes": [
-        "required_version"
-      ]
-    }
   ]
 }
