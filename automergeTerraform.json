@@ -7,13 +7,7 @@
       "groupName": "terraform",
       "matchManagers": [
         "terraform"
-      ],
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
-      "matchPackageNames": ["aws", "github", "vercel"]
+      ]
     }
   ]
 }
