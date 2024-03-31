@@ -1,18 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "regexManagers": [
-    {
-      "fileMatch": [
-        "^.tool-versions$"
-      ],
-      "matchStrings": [
-        "terraform (?<currentValue>\\d+\\.\\d+\\.\\d+)"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "hashicorp/terraform",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    }
-  ],
   "packageRules": [
     {
       "addLabels": ["terraform"],
