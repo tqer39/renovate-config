@@ -26,14 +26,6 @@
       "matchDepTypes": [
         "required_version"
       ]
-    },
-    {
-      "addLabels": ["terraform"],
-      "automerge": true,
-      "matchManagers": [
-        "terraform"
-      ],
-      "matchPackageNames": ["aws", "github", "vercel"]
     }
   ]
 }
