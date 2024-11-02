@@ -22,4 +22,4 @@ jobs:
       - uses: tqer39/generate-pr-description-action@v0.0.2-alpha
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          open-api-key: ${{ secrets.OPENAI_API_KEY }}
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
