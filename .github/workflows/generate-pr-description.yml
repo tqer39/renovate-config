@@ -13,8 +13,6 @@ jobs:
   pull-request:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      pull-requests: write
     if: contains(github.event.pull_request.user.login, 'renovate') == false
     steps:
       - uses: actions/checkout@v4
