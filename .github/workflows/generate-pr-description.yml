@@ -18,6 +18,8 @@ jobs:
     if: contains(github.event.pull_request.user.login, 'renovate') == false
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: tqer39/generate-pr-description-action@v0.0.13-alpha
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
