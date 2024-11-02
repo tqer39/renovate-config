@@ -16,6 +16,7 @@
     "github>tqer39/renovate-config:patch",
     "github>tqer39/renovate-config:platformAutomerge",
     "github>tqer39/renovate-config:preCommit",
+    "github>tqer39/renovate-config:prHourlyLimit",
     "github>tqer39/renovate-config:separateMajorMinor",
     "github>tqer39/renovate-config:separateMultipleMajor",
     "github>tqer39/renovate-config:timezone"
