@@ -1,5 +1,5 @@
 ---
-name: OpenAI PR Description Generator
+name: OpenAI Generator PR Title and Description
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
       - synchronize
 
 jobs:
-  pull-request:
+  generate-pr-description:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: contains(github.event.pull_request.user.login, 'renovate') == false
