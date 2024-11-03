@@ -8,6 +8,7 @@
     "github>tqer39/renovate-config:settings/automergePreCommit",
     "github>tqer39/renovate-config:settings/automergePyEnv",
     "github>tqer39/renovate-config:settings/automergePython",
+    "github>tqer39/renovate-config:settings/automergeSchedule",
     "github>tqer39/renovate-config:settings/automergeStrategy",
     "github>tqer39/renovate-config:settings/automergeTerraform",
     "github>tqer39/renovate-config:settings/dependencyDashboard",
