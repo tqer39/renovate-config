@@ -3,9 +3,7 @@
   "packageRules": [
     {
       "addLabels": [
-        "npm",
-        "node",
-        "nodenv"
+        "Node.js"
       ],
       "allowedVersions": "<24.0.0",
       "matchCurrentVersion": "<24.0.0",
