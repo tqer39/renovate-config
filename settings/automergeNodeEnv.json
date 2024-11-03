@@ -15,7 +15,35 @@
         "nodenv"
       ],
       "rangeStrategy": "replace",
-      "supportPolicy": ["lts"]
+      "supportPolicy": [
+        "lts"
+      ]
+    },
+    {
+      "addLabels": [
+        "Node.js"
+      ],
+      "automerge": true,
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "amazon-cognito-identity-js",
+        "dayjs",
+        "cspell",
+        "dotenv",
+        "husky",
+        "launchdarkly-js-client-sdk",
+        "lint-staged",
+        "pnpm",
+        "retry-cli",
+        "source-map-support",
+        "ts-node"
+      ]
     }
   ]
 }
