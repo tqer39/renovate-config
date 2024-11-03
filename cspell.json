@@ -1,5 +1,4 @@
 {
-  "dictionaries": ["custom-words"],
   "files": [
     "**",
     ".*/**"
@@ -14,5 +13,41 @@
       "path": "./.cspell/custom-words.txt",
       "addWords": true
     }
+  ],
+  "words": [
+    "adrienverge",
+    "antonbabenko",
+    "autobuild",
+    "Autobuild",
+    "autofix",
+    "automerge",
+    "awsebcli",
+    "buildscript",
+    "buildx",
+    "CODEOWNERS",
+    "codeql",
+    "datasource",
+    "Datasources",
+    "dateutil",
+    "freezegun",
+    "igorshubovych",
+    "kentaro",
+    "markdownlint",
+    "moto",
+    "mypy",
+    "nodenv",
+    "ooyama",
+    "powertools",
+    "pyenv",
+    "pytest",
+    "renovatebot",
+    "reviewdog",
+    "rinchsan",
+    "setuptools",
+    "shellcheck",
+    "SSIA",
+    "textlint",
+    "textlintcache",
+    "tqer"
   ]
 }

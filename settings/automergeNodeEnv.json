@@ -3,10 +3,25 @@
   "packageRules": [
     {
       "addLabels": [
-        "npm", "node", "nodenv"
+        "Node.js"
       ],
-      "allowedVersions": "<19.0.0",
-      "matchCurrentVersion": "<19.0.0",
+      "groupName": "Node.js",
+      "matchPackageNames": [
+        "node",
+        "@types/node"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "addLabels": [
+        "Node.js"
+      ],
+      "allowedVersions": "<24.0.0",
+      "matchCurrentVersion": "<24.0.0",
       "automerge": true,
       "major": {
         "automerge": false
@@ -15,7 +30,53 @@
         "nodenv"
       ],
       "rangeStrategy": "replace",
-      "supportPolicy": ["lts"]
+      "supportPolicy": [
+        "lts"
+      ]
+    },
+    {
+      "addLabels": [
+        "Node.js"
+      ],
+      "automerge": true,
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "amazon-cognito-identity-js",
+        "dayjs",
+        "cspell",
+        "dotenv",
+        "husky",
+        "launchdarkly-js-client-sdk",
+        "lint-staged",
+        "pnpm",
+        "retry-cli",
+        "source-map-support",
+        "ts-node"
+      ]
+    },
+    {
+      "addLabels": [
+        "Node.js"
+      ],
+      "groupName": "AWS CDK and cdk-nag",
+      "groupSlug": "aws-cdk",
+      "matchSourceUrls": [
+        "https://github.com/aws/aws-cdk",
+        "https://github.com/aws/constructs",
+        "https://github.com/cdklabs/cdk-nag",
+        "https://github.com/DataDog/datadog-cdk-constructs"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
     }
   ]
 }

@@ -7,6 +7,8 @@
     "github>tqer39/renovate-config:settings/automergeNodeEnv",
     "github>tqer39/renovate-config:settings/automergePreCommit",
     "github>tqer39/renovate-config:settings/automergePyEnv",
+    "github>tqer39/renovate-config:settings/automergePython",
+    "github>tqer39/renovate-config:settings/automergeSchedule",
     "github>tqer39/renovate-config:settings/automergeStrategy",
     "github>tqer39/renovate-config:settings/automergeTerraform",
     "github>tqer39/renovate-config:settings/dependencyDashboard",
@@ -17,8 +19,10 @@
     "github>tqer39/renovate-config:settings/platformAutomerge",
     "github>tqer39/renovate-config:settings/preCommit",
     "github>tqer39/renovate-config:settings/prHourlyLimit",
+    "github>tqer39/renovate-config:settings/schedule",
     "github>tqer39/renovate-config:settings/separateMajorMinor",
     "github>tqer39/renovate-config:settings/separateMultipleMajor",
-    "github>tqer39/renovate-config:settings/timezone"
+    "github>tqer39/renovate-config:settings/timezone",
+    "github>tqer39/renovate-config:settings/vulnerabilityAlerts"
   ]
 }
