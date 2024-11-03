@@ -5,8 +5,8 @@
       "addLabels": [
         "npm", "node", "nodenv"
       ],
-      "allowedVersions": "<19.0.0",
-      "matchCurrentVersion": "<19.0.0",
+      "allowedVersions": "<24.0.0",
+      "matchCurrentVersion": "<24.0.0",
       "automerge": true,
       "major": {
         "automerge": false
