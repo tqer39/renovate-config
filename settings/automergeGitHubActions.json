@@ -9,6 +9,23 @@
       "matchManagers": [
         "github-actions"
       ]
+    },
+    {
+      "groupName": [
+        "GitHub Page Actions"
+      ],
+      "addLabels": [
+        "github-actions",
+        "GitHub Pages"
+      ],
+      "automerge": true,
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "matchPackageNames": [
+        "actions/configure-pages",
+        "actions/deploy-pages"
+      ]
     }
   ]
 }
