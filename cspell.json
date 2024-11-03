@@ -1,7 +1,4 @@
 {
-  "dictionaries": [
-    "custom-words"
-  ],
   "files": [
     "**",
     ".*/**"
