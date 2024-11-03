@@ -14,5 +14,33 @@
       "path": "./.cspell/custom-words.txt",
       "addWords": true
     }
+  ],
+  "words": [
+    "adrienverge",
+    "antonbabenko",
+    "autobuild",
+    "Autobuild",
+    "autofix",
+    "automerge",
+    "buildscript",
+    "CODEOWNERS",
+    "codeql",
+    "datasource",
+    "Datasources",
+    "igorshubovych",
+    "kentaro",
+    "markdownlint",
+    "nodenv",
+    "ooyama",
+    "pyenv",
+    "renovatebot",
+    "reviewdog",
+    "rinchsan",
+    "shellcheck",
+    "SSIA",
+    "textlint",
+    "textlintcache",
+    "tqer",
+    "buildx"
   ]
 }
