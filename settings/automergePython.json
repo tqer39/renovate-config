@@ -56,6 +56,29 @@
         "types-python-dateutil"
       ],
       "automerge": true
+    },
+    {
+      "addLabels": [
+        "python",
+        "testing-tools"
+      ],
+      "groupName": "Python testing tools",
+      "groupSlug": "python-testing-tools",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchPackageNames": [
+        "coverage",
+        "factory-boy",
+        "freezegun",
+        "moto",
+        "pytest-cov",
+        "pytest-env",
+        "pytest-snapshot",
+        "pytest",
+        "types-freezegun"
+      ]
     }
   ]
 }
