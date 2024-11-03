@@ -1,5 +1,7 @@
 {
-  "dictionaries": ["custom-words"],
+  "dictionaries": [
+    "custom-words"
+  ],
   "files": [
     "**",
     ".*/**"
@@ -23,6 +25,7 @@
     "autofix",
     "automerge",
     "buildscript",
+    "buildx",
     "CODEOWNERS",
     "codeql",
     "datasource",
@@ -32,15 +35,16 @@
     "markdownlint",
     "nodenv",
     "ooyama",
+    "powertools",
     "pyenv",
     "renovatebot",
     "reviewdog",
     "rinchsan",
+    "setuptools",
     "shellcheck",
     "SSIA",
     "textlint",
     "textlintcache",
-    "tqer",
-    "buildx"
+    "tqer"
   ]
 }

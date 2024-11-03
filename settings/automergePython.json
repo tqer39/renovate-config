@@ -1,0 +1,61 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "addLabels": [
+        "Python"
+      ],
+      "automerge": true,
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchPackageNames": [
+        "aws-lambda-powertools",
+        "aws-xray-sdk",
+        "awsebcli",
+        "mypy",
+        "typing-extensions"
+      ]
+    },
+    {
+      "addLabels": [
+        "python",
+        "Package tools"
+      ],
+      "groupName": "Python package tools (pip, Poetry, uv)",
+      "groupSlug": "python-package-tools",
+      "matchPackageNames": [
+        "pip",
+        "poetry",
+        "python-poetry/poetry",
+        "uv"
+      ],
+      "automerge": true
+    },
+    {
+      "addLabels": [
+        "python"
+      ],
+      "groupName": "setuptools",
+      "groupSlug": "python-setuptools",
+      "matchPackageNames": [
+        "types-setuptools",
+        "setuptools"
+      ],
+      "automerge": true
+    },
+    {
+      "addLabels": [
+        "python"
+      ],
+      "groupName": "python-dateutil",
+      "groupSlug": "python-dateutil",
+      "matchPackageNames": [
+        "python-dateutil",
+        "types-python-dateutil"
+      ],
+      "automerge": true
+    }
+  ]
+}
