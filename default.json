@@ -19,6 +19,7 @@
     "github>tqer39/renovate-config:settings/platformAutomerge",
     "github>tqer39/renovate-config:settings/preCommit",
     "github>tqer39/renovate-config:settings/prHourlyLimit",
+    "github>tqer39/renovate-config:settings/schedule",
     "github>tqer39/renovate-config:settings/separateMajorMinor",
     "github>tqer39/renovate-config:settings/separateMultipleMajor",
     "github>tqer39/renovate-config:settings/timezone",
