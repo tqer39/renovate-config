@@ -48,6 +48,9 @@
       ]
     },
     {
+      "addLabels": [
+        "Node.js"
+      ],
       "groupName": "AWS CDK and cdk-nag",
       "groupSlug": "aws-cdk",
       "matchSourceUrls": [
