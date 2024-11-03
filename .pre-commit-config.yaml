@@ -1,6 +1,5 @@
 ---
 # see https://pre-commit.com
-
 default_language_version:
   python: python3.13.0
 
