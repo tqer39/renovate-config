@@ -10,7 +10,6 @@
     "github>tqer39/renovate-config:settings/automergeSchedule",
     "github>tqer39/renovate-config:settings/automergeStrategy",
     "github>tqer39/renovate-config:settings/automergeTerraform",
-    "github>tqer39/renovate-config:settings/automergeTypesMinor",
     "github>tqer39/renovate-config:settings/dependencyDashboard",
     "github>tqer39/renovate-config:settings/major",
     "github>tqer39/renovate-config:settings/minor",
