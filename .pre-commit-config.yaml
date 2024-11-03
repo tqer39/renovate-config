@@ -78,3 +78,5 @@ repos:
     hooks:
       - id: renovate-config-validator
         files: renovate\.json
+        additional_dependencies:
+          - "renovate"
