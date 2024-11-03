@@ -5,6 +5,21 @@
       "addLabels": [
         "Node.js"
       ],
+      "groupName": "Node.js",
+      "matchPackageNames": [
+        "node",
+        "@types/node"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "addLabels": [
+        "Node.js"
+      ],
       "allowedVersions": "<24.0.0",
       "matchCurrentVersion": "<24.0.0",
       "automerge": true,
