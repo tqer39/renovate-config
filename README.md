@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <i>This repository is a repository that allows you to reference and use the configuration files of Renovate, a dependency update tool, from multiple repositories by consolidating them.</i>
+  <i>This repository is a repository that allows you to refer to and use Renovate configuration files from multiple repositories by consolidating them.</i>
 </p>
 
 ---
@@ -64,7 +64,9 @@ sequenceDiagram
     tqer39/renovate-config->>renovate.json: Return settings
 ```
 
-## Description of settings/ Files
+## Description of Renovate settings
+
+The configuration file cannot be placed anywhere other than the root of the repository.
 
 | File Name | Description |
 |-----------|-------------|
