@@ -2,16 +2,11 @@
   <a href="">
     <img src="./header.jpg" alt="header" width="100%">
   </a>
-</p>
-<p>
-  <div align="center">
-    <h1>Renovate Config</h1>
-  </div>
+  <span align="center" style="font-size: 4rem;">Renovate Config</span>
 </p>
 
 <p align="center">
-  <i>このリポジトリには、依存関係の更新ツールである Renovate の設定ファイルを共通化してまとめて置くことで複数のリポジトリから参照して使用することが可能なリポジトリです。
-</i>
+  <i>このリポジトリには、依存関係の更新ツールである Renovate の設定ファイルを共通化してまとめて置くことで複数のリポジトリから参照して使用することが可能なリポジトリです。</i>
 </p>
 
 ---
