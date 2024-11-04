@@ -2,7 +2,7 @@
   <a href="">
     <img src="./header.jpg" alt="header" width="100%">
   </a>
-  <span align="center" style="font-size: 4rem;">Renovate Config</span>
+  <h1 align="center">Renovate Config</h1>
 </p>
 
 <p align="center">
