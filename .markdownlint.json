@@ -6,6 +6,7 @@
     "allowed_elements": [
       "a",
       "details",
+      "h1",
       "i",
       "img",
       "p",
