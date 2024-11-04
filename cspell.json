@@ -36,6 +36,7 @@
     "moto",
     "mypy",
     "nodenv",
+    "O'oyama",
     "ooyama",
     "powertools",
     "pyenv",
@@ -46,6 +47,7 @@
     "setuptools",
     "shellcheck",
     "SSIA",
+    "Takeru",
     "textlint",
     "textlintcache",
     "tqer"
