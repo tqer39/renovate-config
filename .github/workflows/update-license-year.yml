@@ -23,6 +23,6 @@ jobs:
           private-key: ${{ secrets.GHA_APP_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
 
-      - uses: tqer39/update-license-year@v0.0.1-alpha
+      - uses: tqer39/update-license-year@v1.0.0
         with:
           github-token: ${{ steps.app_token.outputs.token }}
