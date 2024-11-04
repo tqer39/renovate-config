@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      pull-requests: write # uses: tqer39/generate-pr-description-action
+      pull-requests: write # uses: tqer39/openai-generate-pr-description
     # Check if the PR is not created by 'renovate' or 'tqer39-apps'
     if: contains(fromJSON('["renovate[bot]", "tqer39-apps[bot]"]'), github.event.pull_request.user.login) == false
     steps:
