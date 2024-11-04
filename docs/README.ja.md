@@ -64,6 +64,8 @@ sequenceDiagram
 
 ## renovate 設定の説明
 
+設定ファイルはリポジトリのルート以外では配置できません。
+
 | ファイル名 | 説明 |
 |------------|------|
 | [automergeGitHubActions.json](https://docs.renovatebot.com/configuration-options/#automerge) | GitHub Actions の自動マージ設定 |

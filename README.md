@@ -66,6 +66,8 @@ sequenceDiagram
 
 ## Description of Renovate settings
 
+The configuration file cannot be placed anywhere other than the root of the repository.
+
 | File Name | Description |
 |-----------|-------------|
 | [automergeGitHubActions.json](https://docs.renovatebot.com/configuration-options/#automerge) | Auto-merge settings for GitHub Actions |
