@@ -15,13 +15,14 @@ jobs:
     timeout-minutes: 10
     permissions:
       pull-requests: write # uses: tqer39/generate-pr-description-action
-    if: contains(github.event.pull_request.user.login, 'renovate') == false
+    # Check if the PR is not created by 'renovate' or 'tqer39-apps'
+    if: github.event.pull_request.user.login != 'renovate' && github.event.pull_request.user.login != 'tqer39-apps'
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: tqer39/generate-pr-description-action@v0.0.21-alpha
+      - uses: tqer39/openai-generate-pr-description-action@v0.0.21-alpha
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          openai-model: 'gpt-4o'
+          openai-model: "gpt-4o"
