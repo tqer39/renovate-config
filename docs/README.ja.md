@@ -62,7 +62,7 @@ sequenceDiagram
     tqer39/renovate-config->>renovate.json: 設定を返す
 ```
 
-## settings/ ファイルの説明
+## renovate 設定の説明
 
 | ファイル名 | 説明 |
 |------------|------|
