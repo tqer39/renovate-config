@@ -1,6 +1,20 @@
-# renovate-config
+<p align="center">
+  <a href="">
+    <img src="./header.jpg" alt="header" width="100%">
+  </a>
+</p>
+<p>
+  <div align="center">
+    <h1>Renovate Config</h1>
+  </div>
+</p>
 
-このリポジトリには、依存関係の更新ツールである Renovate の設定ファイルが含まれています。Renovate は、プロジェクトの依存関係を最新のバージョンに保つプロセスを自動化するのに役立ちます。
+<p align="center">
+  <i>このリポジトリには、依存関係の更新ツールである Renovate の設定ファイルを共通化してまとめて置くことで複数のリポジトリから参照して使用することが可能なリポジトリです。
+</i>
+</p>
+
+---
 
 ## 使い方
 
@@ -15,7 +29,26 @@
 }
 ```
 
-## このリポジトリを自分用にカスタマイズして使う場合
+## リポジトリごとに設定をカスタマイズする場合
+
+1. プロジェクトのルートディレクトリに `renovate.json` ファイルを作成します。
+2. 以下のように `renovate.json` ファイルに設定を追加します。
+
+```json
+{
+  "extends": [
+    "github>tqer39/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": ["^@tqer39/"],
+      "automerge": true
+    }
+  ]
+}
+```
+
+### このリポジトリの共通設定を自分用にカスタマイズして使う場合
 
 1. このリポジトリをフォークします。
 2. フォークしたリポジトリの URL を使って `renovate.json` ファイルに設定を追加します。
