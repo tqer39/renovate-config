@@ -61,6 +61,7 @@ repos:
       - id: prettier
         name: Format GitHub Actions workflow files
         types:
+          - json
           - yaml
 
   - repo: https://github.com/rhysd/actionlint
