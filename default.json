@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>tqer39/renovate-config:settings/automergeTypesMinor",
     "github>tqer39/renovate-config:settings/automergeGitHubActions",
     "github>tqer39/renovate-config:settings/automergeNodeEnv",
     "github>tqer39/renovate-config:settings/automergePreCommit",
