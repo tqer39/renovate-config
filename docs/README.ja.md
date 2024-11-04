@@ -12,14 +12,8 @@
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant UserRepo as User's Repository
-    participant RenovateConfig as tqer39/renovate-config
-
-    User->>UserRepo: フォーク
-    User->>UserRepo: 設定ファイルを変更
-    User->>UserRepo: プッシュ
-    UserRepo->>RenovateConfig: 設定ファイルを取得
+    renovate.json->>tqer39/renovate-config: 共通の設定を読み込み
+    tqer39/renovate-config->>renovate.json: 設定を返す
 ```
 
 ## settings/ ファイルの説明
