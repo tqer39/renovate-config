@@ -15,6 +15,7 @@
         "aws-xray-sdk",
         "awsebcli",
         "mypy",
+        "openai",
         "typing-extensions"
       ]
     },
