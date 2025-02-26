@@ -1,7 +1,7 @@
 ---
 # see https://pre-commit.com
 default_language_version:
-  python: python3.13.0
+  python: python3.12.1
 
 exclude: |
   (?x)^(
@@ -73,4 +73,5 @@ repos:
     rev: 39.174.3
     hooks:
       - id: renovate-config-validator
-        files: renovate\.json
+        language_version: system
+        files: renovate\.json5

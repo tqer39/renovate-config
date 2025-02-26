@@ -29,6 +29,7 @@
     "datasource",
     "Datasources",
     "dateutil",
+    "dotenv",
     "freezegun",
     "igorshubovych",
     "kentaro",
@@ -51,6 +52,7 @@
     "Takeru",
     "textlint",
     "textlintcache",
-    "tqer"
+    "tqer",
+    "vercel"
   ]
 }
