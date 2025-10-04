@@ -39,7 +39,8 @@
         "docker/setup-qemu-action",
         "hashicorp/setup-terraform",
         "kentaro-m/auto-assign-action",
-        "pnpm/action-setup"
+        "pnpm/action-setup",
+        "terraform-linters/setup-tflint"
       ]
     },
     {
