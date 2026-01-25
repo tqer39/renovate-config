@@ -1,51 +1,44 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-
-  // Base configuration
-  "extends": ["config:base"],
-  "timezone": "Asia/Tokyo",
-  "schedule": ["after 0:00 before 6:00 every weekend"],
-
-  // Automerge settings
-  "automerge": true,
-  "automergeSchedule": ["after 0:00 before 6:00 every weekday"],
-  "automergeStrategy": "squash",
-  "automergeType": "pr",
-  "platformAutomerge": true,
-
-  // PR settings
-  "prHourlyLimit": 0,
-  "separateMajorMinor": true,
-  "separateMultipleMajor": true,
-  "dependencyDashboard": true,
-  "labels": ["renovate"],
-
-  // Update type labels
-  "major": { "addLabels": ["major"] },
-  "minor": { "addLabels": ["minor"] },
-  "patch": { "addLabels": ["patch"] },
-
-  // Pre-commit
-  "pre-commit": { "enabled": true },
-
-  // Vulnerability alerts
-  "vulnerabilityAlerts": {
-    "automerge": true,
-    "labels": ["security"]
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["config:recommended"],
+  timezone: "Asia/Tokyo",
+  schedule: ["after 0:00 before 6:00 every weekend"],
+  automerge: true,
+  automergeSchedule: ["after 0:00 before 6:00 every weekday"],
+  automergeStrategy: "squash",
+  automergeType: "pr",
+  platformAutomerge: true,
+  prHourlyLimit: 0,
+  separateMajorMinor: true,
+  separateMultipleMajor: true,
+  dependencyDashboard: true,
+  labels: ["renovate"],
+  major: {
+    addLabels: ["major"],
   },
-
-  // Package rules
-  "packageRules": [
-    // GitHub Actions
+  minor: {
+    addLabels: ["minor"],
+  },
+  patch: {
+    addLabels: ["patch"],
+  },
+  "pre-commit": {
+    enabled: true,
+  },
+  vulnerabilityAlerts: {
+    automerge: true,
+    labels: ["security"],
+  },
+  packageRules: [
     {
-      "addLabels": ["github-actions"],
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch"]
+      addLabels: ["github-actions"],
+      matchManagers: ["github-actions"],
+      matchUpdateTypes: ["minor", "patch"],
     },
     {
-      "addLabels": ["github-actions"],
-      "matchUpdateTypes": ["major"],
-      "matchPackageNames": [
+      addLabels: ["github-actions"],
+      matchUpdateTypes: ["major"],
+      matchPackageNames: [
         "actions/cache",
         "actions/checkout",
         "actions/labeler",
@@ -63,37 +56,36 @@
         "hashicorp/setup-terraform",
         "kentaro-m/auto-assign-action",
         "pnpm/action-setup",
-        "terraform-linters/setup-tflint"
-      ]
+        "terraform-linters/setup-tflint",
+      ],
     },
     {
-      "groupName": "GitHub Page Actions",
-      "addLabels": ["github-actions", "GitHub Pages"],
-      "matchUpdateTypes": ["major"],
-      "matchPackageNames": ["actions/configure-pages", "actions/deploy-pages"]
-    },
-
-    // Node.js
-    {
-      "addLabels": ["Node.js"],
-      "groupName": "Node.js",
-      "matchPackageNames": ["node", "@types/node"],
-      "matchUpdateTypes": ["minor", "patch"]
+      groupName: "GitHub Page Actions",
+      addLabels: ["github-actions", "GitHub Pages"],
+      matchUpdateTypes: ["major"],
+      matchPackageNames: ["actions/configure-pages", "actions/deploy-pages"],
     },
     {
-      "addLabels": ["Node.js"],
-      "allowedVersions": "<24.0.0",
-      "matchCurrentVersion": "<24.0.0",
-      "major": { "automerge": false },
-      "matchManagers": ["nodenv"],
-      "rangeStrategy": "replace",
-      "supportPolicy": ["lts"]
+      addLabels: ["Node.js"],
+      groupName: "Node.js",
+      matchPackageNames: ["node", "@types/node"],
+      matchUpdateTypes: ["minor", "patch"],
     },
     {
-      "addLabels": ["Node.js"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchManagers": ["npm"],
-      "matchPackageNames": [
+      addLabels: ["Node.js"],
+      allowedVersions: "<24.0.0",
+      matchCurrentVersion: "<24.0.0",
+      major: {
+        automerge: false,
+      },
+      matchManagers: ["nodenv"],
+      rangeStrategy: "replace",
+    },
+    {
+      addLabels: ["Node.js"],
+      matchUpdateTypes: ["minor", "patch"],
+      matchManagers: ["npm"],
+      matchPackageNames: [
         "amazon-cognito-identity-js",
         "dayjs",
         "cspell",
@@ -104,68 +96,68 @@
         "pnpm",
         "retry-cli",
         "source-map-support",
-        "ts-node"
-      ]
+        "ts-node",
+      ],
     },
     {
-      "addLabels": ["Node.js"],
-      "groupName": "AWS CDK and cdk-nag",
-      "groupSlug": "aws-cdk",
-      "matchSourceUrls": [
+      addLabels: ["Node.js"],
+      groupName: "AWS CDK and cdk-nag",
+      groupSlug: "aws-cdk",
+      matchSourceUrls: [
         "https://github.com/aws/aws-cdk",
         "https://github.com/aws/constructs",
         "https://github.com/cdklabs/cdk-nag",
-        "https://github.com/DataDog/datadog-cdk-constructs"
+        "https://github.com/DataDog/datadog-cdk-constructs",
       ],
-      "matchUpdateTypes": ["minor", "patch"]
+      matchUpdateTypes: ["minor", "patch"],
     },
-
-    // pyenv
     {
-      "addLabels": ["pyenv"],
-      "allowedVersions": "<3.10",
-      "major": { "automerge": false },
-      "matchManagers": ["pyenv"],
-      "minor": { "automerge": false }
+      addLabels: ["pyenv"],
+      allowedVersions: "<3.10",
+      major: {
+        automerge: false,
+      },
+      matchManagers: ["pyenv"],
+      minor: {
+        automerge: false,
+      },
     },
-
-    // Python
     {
-      "addLabels": ["Python"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": [
+      addLabels: ["Python"],
+      matchUpdateTypes: ["minor", "patch"],
+      matchPackageNames: [
         "aws-lambda-powertools",
         "aws-xray-sdk",
         "awsebcli",
         "mypy",
         "openai",
-        "typing-extensions"
-      ]
+        "typing-extensions",
+      ],
     },
     {
-      "addLabels": ["python", "Package tools"],
-      "groupName": "Python package tools (pip, Poetry, uv)",
-      "groupSlug": "python-package-tools",
-      "matchPackageNames": ["pip", "poetry", "python-poetry/poetry", "uv"]
+      addLabels: ["python", "Package tools"],
+      groupName: "Python package tools (pip, Poetry, uv)",
+      groupSlug: "python-package-tools",
+      matchPackageNames: ["pip", "poetry", "python-poetry/poetry", "uv"],
     },
     {
-      "addLabels": ["python"],
-      "groupName": "setuptools",
-      "groupSlug": "python-setuptools",
-      "matchPackageNames": ["types-setuptools", "setuptools"]
+      addLabels: ["python"],
+      groupName: "setuptools",
+      groupSlug: "python-setuptools",
+      matchPackageNames: ["types-setuptools", "setuptools"],
     },
     {
-      "addLabels": ["python"],
-      "groupName": "python-dateutil",
-      "groupSlug": "python-dateutil",
-      "matchPackageNames": ["python-dateutil", "types-python-dateutil"]
+      addLabels: ["python"],
+      groupName: "python-dateutil",
+      groupSlug: "python-dateutil",
+      matchPackageNames: ["python-dateutil", "types-python-dateutil"],
     },
     {
-      "addLabels": ["python", "testing-tools"],
-      "groupName": "Python testing tools",
-      "groupSlug": "python-testing-tools",
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": [
+      addLabels: ["python", "testing-tools"],
+      groupName: "Python testing tools",
+      groupSlug: "python-testing-tools",
+      matchUpdateTypes: ["minor", "patch"],
+      matchPackageNames: [
         "coverage",
         "factory-boy",
         "freezegun",
@@ -174,8 +166,8 @@
         "pytest-env",
         "pytest-snapshot",
         "pytest",
-        "types-freezegun"
-      ]
-    }
-  ]
+        "types-freezegun",
+      ],
+    },
+  ],
 }
