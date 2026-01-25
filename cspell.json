@@ -1,12 +1,6 @@
 {
-  "files": [
-    "**",
-    ".*/**"
-  ],
-  "ignorePaths": [
-    ".git",
-    ".gitignore"
-  ],
+  "files": ["**", ".*/**"],
+  "ignorePaths": [".git", ".gitignore"],
   "dictionaryDefinitions": [
     {
       "name": "custom-words",
