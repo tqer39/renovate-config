@@ -69,7 +69,7 @@ sequenceDiagram
 The configuration file cannot be placed anywhere other than the root of the repository.
 
 | File Name | Description |
-|-----------|-------------|
+| ----------- | ------------- |
 | [automergeGitHubActions.json5](https://docs.renovatebot.com/configuration-options/#automerge) | Auto-merge settings for GitHub Actions |
 | [automergeNodeEnv.json5](https://docs.renovatebot.com/configuration-options/#automerge) | Auto-merge settings for the Node.js environment |
 | [automergePreCommit.json5](https://docs.renovatebot.com/configuration-options/#automerge) | Auto-merge settings for pre-commit |
