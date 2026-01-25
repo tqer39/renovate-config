@@ -5,7 +5,6 @@
       "addLabels": [
         "Python"
       ],
-      "automerge": true,
       "matchUpdateTypes": [
         "minor",
         "patch"
@@ -31,8 +30,7 @@
         "poetry",
         "python-poetry/poetry",
         "uv"
-      ],
-      "automerge": true
+      ]
     },
     {
       "addLabels": [
@@ -43,8 +41,7 @@
       "matchPackageNames": [
         "types-setuptools",
         "setuptools"
-      ],
-      "automerge": true
+      ]
     },
     {
       "addLabels": [
@@ -55,8 +52,7 @@
       "matchPackageNames": [
         "python-dateutil",
         "types-python-dateutil"
-      ],
-      "automerge": true
+      ]
     },
     {
       "addLabels": [
