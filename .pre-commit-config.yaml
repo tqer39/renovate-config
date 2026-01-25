@@ -1,5 +1,5 @@
 ---
-# see https://pre-commit.com
+# see https://prek.j178.dev
 default_language_version:
   python: python3.13.0
 
@@ -9,18 +9,23 @@ exclude: |
   )$
 
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+  # prek builtin hooks (Rust implementation - faster and offline-capable)
+  - repo: builtin
     hooks:
       - id: check-added-large-files
         args: ['--maxkb=512']
-      - id: detect-aws-credentials
-        args: [--allow-missing-credentials]
-      - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: ['--fix=lf']
       - id: trailing-whitespace
+
+  # Hooks not available in builtin
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
+      - id: detect-private-key
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
     rev: v9.2.0
