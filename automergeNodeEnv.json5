@@ -13,8 +13,7 @@
       "matchUpdateTypes": [
         "minor",
         "patch"
-      ],
-      "automerge": true
+      ]
     },
     {
       "addLabels": [
@@ -22,7 +21,6 @@
       ],
       "allowedVersions": "<24.0.0",
       "matchCurrentVersion": "<24.0.0",
-      "automerge": true,
       "major": {
         "automerge": false
       },
@@ -38,7 +36,6 @@
       "addLabels": [
         "Node.js"
       ],
-      "automerge": true,
       "matchUpdateTypes": [
         "minor",
         "patch"
@@ -75,8 +72,7 @@
       "matchUpdateTypes": [
         "minor",
         "patch"
-      ],
-      "automerge": true
+      ]
     }
   ]
 }
