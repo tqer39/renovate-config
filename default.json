@@ -1,27 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    "github>tqer39/renovate-config:automerge.json5",
-    "github>tqer39/renovate-config:automergeGitHubActions.json5",
-    "github>tqer39/renovate-config:automergeNodeEnv.json5",
-    "github>tqer39/renovate-config:automergePyEnv.json5",
-    "github>tqer39/renovate-config:automergePython.json5",
-    "github>tqer39/renovate-config:automergeSchedule.json5",
-    "github>tqer39/renovate-config:automergeStrategy.json5",
-    "github>tqer39/renovate-config:automergeType.json5",
-    "github>tqer39/renovate-config:dependencyDashboard.json5",
-    "github>tqer39/renovate-config:major.json5",
-    "github>tqer39/renovate-config:minor.json5",
-    "github>tqer39/renovate-config:labels.json5",
-    "github>tqer39/renovate-config:patch.json5",
-    "github>tqer39/renovate-config:platformAutomerge.json5",
-    "github>tqer39/renovate-config:preCommit.json5",
-    "github>tqer39/renovate-config:prHourlyLimit.json5",
-    "github>tqer39/renovate-config:schedule.json5",
-    "github>tqer39/renovate-config:separateMajorMinor.json5",
-    "github>tqer39/renovate-config:separateMultipleMajor.json5",
-    "github>tqer39/renovate-config:timezone.json5",
-    "github>tqer39/renovate-config:vulnerabilityAlerts.json5"
-  ]
+  "extends": ["github>tqer39/renovate-config:renovate.json5"]
 }
