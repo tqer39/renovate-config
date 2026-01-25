@@ -1,6 +1,0 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "automergeSchedule": [
-    "after 0:00 before 6:00 every weekday"
-  ]
-}
