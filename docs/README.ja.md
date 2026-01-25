@@ -67,7 +67,7 @@ sequenceDiagram
 設定ファイルはリポジトリのルート以外では配置できません。
 
 | ファイル名 | 説明 |
-|------------|------|
+| ------------ | ------ |
 | [automergeGitHubActions.json5](https://docs.renovatebot.com/configuration-options/#automerge) | GitHub Actions の自動マージ設定 |
 | [automergeNodeEnv.json5](https://docs.renovatebot.com/configuration-options/#automerge) | Node.js 環境の自動マージ設定 |
 | [automergePreCommit.json5](https://docs.renovatebot.com/configuration-options/#automerge) | pre-commit の自動マージ設定 |
