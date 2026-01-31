@@ -67,25 +67,24 @@ sequenceDiagram
 設定ファイルはリポジトリのルート以外では配置できません。
 
 | ファイル名 | 説明 |
-| ------------ | ------ |
-| [automergeGitHubActions.json5](https://docs.renovatebot.com/configuration-options/#automerge) | GitHub Actions の自動マージ設定 |
-| [automergeNodeEnv.json5](https://docs.renovatebot.com/configuration-options/#automerge) | Node.js 環境の自動マージ設定 |
-| [automergePreCommit.json5](https://docs.renovatebot.com/configuration-options/#automerge) | pre-commit の自動マージ設定 |
-| [automergePyEnv.json5](https://docs.renovatebot.com/configuration-options/#automerge) | pyenv の自動マージ設定 |
-| [automergePython.json5](https://docs.renovatebot.com/configuration-options/#automerge) | Python パッケージの自動マージ設定 |
-| [automergeSchedule.json5](https://docs.renovatebot.com/configuration-options/#schedule) | 自動マージのスケジュール設定 |
-| [automergeStrategy.json5](https://docs.renovatebot.com/configuration-options/#automerge) | 自動マージの戦略設定 |
-| [dependencyDashboard.json5](https://docs.renovatebot.com/configuration-options/#dependencydashboard) | 依存関係ダッシュボードの設定 |
-| [major.json5](https://docs.renovatebot.com/configuration-options/#major) | メジャーアップデートの設定 |
-| [minor.json5](https://docs.renovatebot.com/configuration-options/#minor) | マイナーアップデートの設定 |
-| [patch.json5](https://docs.renovatebot.com/configuration-options/#patch) | パッチアップデートの設定 |
-| [platformAutomerge.json5](https://docs.renovatebot.com/configuration-options/#automerge) | プラットフォームの自動マージ設定 |
-| [prHourlyLimit.json5](https://docs.renovatebot.com/configuration-options/#prhourlylimit) | プルリクエストの時間あたりの制限設定 |
-| [schedule.json5](https://docs.renovatebot.com/configuration-options/#schedule) | スケジュール設定 |
-| [separateMajorMinor.json5](https://docs.renovatebot.com/configuration-options/#separatemajorminor) | メジャーとマイナーの分離設定 |
-| [separateMultipleMajor.json5](https://docs.renovatebot.com/configuration-options/#separatemultiplemajor) | 複数のメジャーアップデートの分離設定 |
-| [timezone.json5](https://docs.renovatebot.com/configuration-options/#timezone) | タイムゾーンの設定 |
-| [vulnerabilityAlerts.json5](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts) | 脆弱性アラートの設定。これにより、依存関係に脆弱性が発見された場合に通知を受け取ることができます。 |
+| --------- | ----------- |
+| [default.json](../default.json) | 外部リポジトリ用のエントリーポイント。`renovate.json5` を extends します。 |
+| [renovate.json5](../renovate.json5) | すべての Renovate 設定を含むメイン設定ファイル。 |
+
+### `renovate.json5` の主要な設定項目
+
+| オプション | 説明 |
+| ------ | ----------- |
+| `timezone` | タイムゾーン設定 (Asia/Tokyo) |
+| `schedule` | 更新チェックのスケジュール (週末 0:00-6:00) |
+| `automerge` | PR の自動マージ設定 |
+| `automergeSchedule` | 自動マージのスケジュール (平日 0:00-6:00) |
+| `automergeStrategy` | マージ戦略 (squash) |
+| `platformAutomerge` | プラットフォームレベルの自動マージを有効化 |
+| `separateMajorMinor` | メジャーとマイナーの更新 PR を分離 |
+| `dependencyDashboard` | 依存関係ダッシュボードを有効化 |
+| `vulnerabilityAlerts` | セキュリティ脆弱性アラート設定 |
+| `packageRules` | GitHub Actions、Node.js、Python などのパッケージ固有ルール |
 
 ## 貢献方法
 
