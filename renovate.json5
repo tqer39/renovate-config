@@ -1,6 +1,9 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["config:recommended"],
+  extends: [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+  ],
   timezone: "Asia/Tokyo",
   schedule: ["after 0:00 before 6:00 every weekend"],
   automerge: true,
