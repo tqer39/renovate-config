@@ -89,7 +89,7 @@ The configuration file cannot be placed anywhere other than the root of the repo
 | `separateMajorMinor` | Separate major and minor update PRs |
 | `separateMultipleMajor` | Create separate PRs for each major version bump |
 | `dependencyDashboard` | Enable dependency dashboard |
-| `labels` | Labels applied to PRs (`renovate`, `major`, `minor`, `patch`) |
+| `labels` | PR labels: base `renovate`, plus one of `major`/`minor`/`patch` based on update type |
 | `pre-commit` | Enable pre-commit manager |
 | `vulnerabilityAlerts` | Security vulnerability alerts with auto-merge and `security` label |
 | `packageRules` | Package-specific rules for GitHub Actions, Node.js, Python, etc. |
