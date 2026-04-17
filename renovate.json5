@@ -16,6 +16,12 @@
   separateMultipleMajor: true,
   dependencyDashboard: true,
   labels: ["renovate"],
+  // Supply chain hardening: リリース即攻撃（xz-utils / npm worm 等）を14日間ソークで減速
+  minimumReleaseAge: "14 days",
+  // OSV.dev を検知ソースに追加（GitHub Advisory 単一ソース依存の緩和）
+  osvVulnerabilityAlerts: true,
+  // Renovate 自身が任意コマンドを実行しないことを明示
+  allowedPostUpgradeCommands: [],
   major: {
     addLabels: ["major"],
   },
