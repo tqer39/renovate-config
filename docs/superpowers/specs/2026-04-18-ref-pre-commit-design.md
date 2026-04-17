@@ -159,11 +159,11 @@ jobs:
 
 ### 4.4 `renovate.json5` の調整
 
-現状は `pre-commit` manager で `.pre-commit-config.yaml` の `rev:` を追従している。移行に伴い:
+現状の `renovate.json5` には `"pre-commit": { enabled: true }` ブロックがある。移行に伴い:
 
-- `pre-commit` manager を `"enabledManagers"` から除外
-- `mise` manager を追加して `mise.toml` を追従対象に
-- `regexManagers` で `actions/*@<sha>` 形式のピンを維持する場合は別途確認
+- `"pre-commit": { enabled: true }` を削除（または `enabled: false` に変更）
+- `mise` manager については、Renovate が自動検出するため明示指定を省略する。必要に応じて `"mise": { enabled: true }` を追加
+- `helpers:pinGitHubActionDigests` の preset は継続利用（`lefthook.yml` 内の GitHub Actions も対象）
 
 具体的な diff 設計は writing-plans フェーズで詰める。
 
