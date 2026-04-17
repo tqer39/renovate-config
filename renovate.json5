@@ -24,7 +24,7 @@
   allowedPostUpgradeCommands: [],
   major: {
     addLabels: ["major"],
-    // メジャー更新は目視レビュー必須（悪意のあるメジャーリリース対策）
+    // メジャー更新は目視レビュー必須（悪意のあるメジャー リリース対策）
     automerge: false,
   },
   minor: {
