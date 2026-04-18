@@ -77,15 +77,21 @@ The configuration file cannot be placed anywhere other than the root of the repo
 
 | Option | Description |
 | ------ | ----------- |
-| `timezone` | Time zone setting (Asia/Tokyo) |
+| `extends` | Base presets: `config:recommended` (Renovate 推奨設定), `helpers:pinGitHubActionDigests` (GitHub Actions のバージョン指定をコミット SHA にピン留めし、サプライチェーン攻撃を防止) |
+| `timezone` | Time zone setting (`Asia/Tokyo`) |
 | `schedule` | Update check schedule (weekends 0:00-6:00) |
-| `automerge` | Auto-merge settings for PRs |
+| `automerge` | Auto-merge enabled for PRs |
 | `automergeSchedule` | Auto-merge schedule (weekdays 0:00-6:00) |
-| `automergeStrategy` | Merge strategy (squash) |
+| `automergeStrategy` | Merge strategy (`squash`) |
+| `automergeType` | Auto-merge type (`pr`) |
 | `platformAutomerge` | Enable platform-level auto-merge |
+| `prHourlyLimit` | PR creation rate limit (`0` = unlimited) |
 | `separateMajorMinor` | Separate major and minor update PRs |
+| `separateMultipleMajor` | Create separate PRs for each major version bump |
 | `dependencyDashboard` | Enable dependency dashboard |
-| `vulnerabilityAlerts` | Security vulnerability alert settings |
+| `labels` | PR labels: base `renovate`, plus one of `major`/`minor`/`patch` based on update type |
+| `pre-commit` | Enable pre-commit manager |
+| `vulnerabilityAlerts` | Security vulnerability alerts with auto-merge and `security` label |
 | `packageRules` | Package-specific rules for GitHub Actions, Node.js, Python, etc. |
 
 ## Development
