@@ -16,8 +16,16 @@
   separateMultipleMajor: true,
   dependencyDashboard: true,
   labels: ["renovate"],
+  // Supply chain hardening: リリース即攻撃（xz-utils / npm worm 等）を14日間ソークで減速
+  minimumReleaseAge: "14 days",
+  // OSV.dev を検知ソースに追加（GitHub Advisory 単一ソース依存の緩和）
+  osvVulnerabilityAlerts: true,
+  // Renovate 自身が任意コマンドを実行しないことを明示
+  allowedPostUpgradeCommands: [],
   major: {
     addLabels: ["major"],
+    // メジャー更新は目視レビュー必須（悪意のあるメジャー リリース対策）
+    automerge: false,
   },
   minor: {
     addLabels: ["minor"],
@@ -31,6 +39,10 @@
   vulnerabilityAlerts: {
     automerge: true,
     labels: ["security"],
+    // セキュリティ修正は 14日ソークを上書きして即適用（防御破綻防止）
+    minimumReleaseAge: "0 days",
+    // 週末スケジュール制約を解除（緊急性優先）
+    schedule: ["at any time"],
   },
   packageRules: [
     {
@@ -171,6 +183,12 @@
         "pytest",
         "types-freezegun",
       ],
+    },
+    {
+      // 依存置換（renameなど）は自動マージ禁止：悪意ある replacement 攻撃対策
+      matchUpdateTypes: ["replacement"],
+      automerge: false,
+      addLabels: ["replacement"],
     },
   ],
 }
