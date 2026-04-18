@@ -184,5 +184,11 @@
         "types-freezegun",
       ],
     },
+    {
+      // 依存置換（renameなど）は自動マージ禁止：悪意ある replacement 攻撃対策
+      matchUpdateTypes: ["replacement"],
+      automerge: false,
+      addLabels: ["replacement"],
+    },
   ],
 }
