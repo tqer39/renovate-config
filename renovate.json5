@@ -39,6 +39,10 @@
   vulnerabilityAlerts: {
     automerge: true,
     labels: ["security"],
+    // セキュリティ修正は 14日ソークを上書きして即適用（防御破綻防止）
+    minimumReleaseAge: "0 days",
+    // 週末スケジュール制約を解除（緊急性優先）
+    schedule: ["at any time"],
   },
   packageRules: [
     {
