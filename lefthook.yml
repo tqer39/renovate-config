@@ -8,7 +8,7 @@ pre-commit:
       run: npx --yes --package=renovate -- renovate-config-validator {staged_files}
 
     - name: biome-format
-      glob: "*.{js,jsx,ts,tsx,json,jsonc,json5}"
+      glob: "*.{js,jsx,ts,tsx,json,jsonc}"
       run: biome format --write {staged_files}
       stage_fixed: true
 
