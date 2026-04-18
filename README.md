@@ -88,6 +88,23 @@ The configuration file cannot be placed anywhere other than the root of the repo
 | `vulnerabilityAlerts` | Security vulnerability alert settings |
 | `packageRules` | Package-specific rules for GitHub Actions, Node.js, Python, etc. |
 
+## Development
+
+このリポジトリの pre-commit フックは [lefthook](https://lefthook.dev/) で管理する。
+
+### セットアップ
+
+```bash
+mise install          # lefthook / actionlint / shellcheck / biome / node を導入
+lefthook install      # .git/hooks/pre-commit に lefthook を登録
+```
+
+### ローカルで全ファイル検査
+
+```bash
+lefthook run pre-commit --all-files
+```
+
 ## Contribution
 
 If you find any issues or have improvements, please create an Issue or submit a Pull Request.

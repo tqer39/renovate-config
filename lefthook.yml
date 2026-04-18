@@ -1,0 +1,21 @@
+# lefthook.yml
+# https://lefthook.dev/configuration/
+pre-commit:
+  parallel: true
+  jobs:
+    - name: renovate-config-validator
+      glob: "renovate.json5"
+      run: npx --yes --package=renovate -- renovate-config-validator {staged_files}
+
+    - name: biome-format
+      glob: "*.{js,jsx,ts,tsx,json,jsonc}"
+      run: biome format --write {staged_files}
+      stage_fixed: true
+
+    - name: actionlint
+      glob: ".github/workflows/*.{yml,yaml}"
+      run: actionlint {staged_files}
+
+    - name: shellcheck
+      glob: "*.{sh,bash}"
+      run: shellcheck {staged_files}

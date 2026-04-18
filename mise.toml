@@ -1,0 +1,6 @@
+[tools]
+lefthook = "latest"
+actionlint = "latest"
+shellcheck = "latest"
+biome = "latest"
+node = "lts"

@@ -33,9 +33,6 @@
   patch: {
     addLabels: ["patch"],
   },
-  "pre-commit": {
-    enabled: true,
-  },
   vulnerabilityAlerts: {
     automerge: true,
     labels: ["security"],
