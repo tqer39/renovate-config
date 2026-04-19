@@ -12,8 +12,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  lefthook:
-    name: lefthook
+  lint:
+    name: lint
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
