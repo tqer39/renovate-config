@@ -22,7 +22,7 @@ jobs:
     # Check if the PR is not created by 'renovate' or 'tqer39-apps'
     if: contains(fromJSON('["renovate[bot]", "tqer39-apps[bot]"]'), github.event.pull_request.user.login) == false
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 0
       - uses: tqer39/generate-pr-description@90dbc0ef9ea813159242481eaa1f63d97263f1c1 # v2.0.1
