@@ -86,6 +86,23 @@ sequenceDiagram
 | `vulnerabilityAlerts` | セキュリティ脆弱性アラート設定 |
 | `packageRules` | GitHub Actions、Node.js、Python などのパッケージ固有ルール |
 
+### サプライチェーン攻撃対策
+
+- 通常のリリースは `minimumReleaseAge: "14 days"` で14日間待機します。`internalChecksFilter: "strict"` により、待機中はブランチや PR を作成しません。
+- `minimumReleaseAgeBehaviour: "timestamp-required"` により、公開日時が不明な更新を保留します。日時を取得できないダイジェスト更新も Dependency Dashboard で保留されます。
+- メジャー更新と依存置換は手動マージが必要です。
+- 初回の SHA 固定（`pinDigest`）も手動マージが必要です。元の参照をバージョン付きリリースとして解決できない場合、待機期間の検査が省略されるためです。
+- `pin`、`replacement`、`lockFileMaintenance`、`lockfileUpdate`、`rollback`、`bump` は [公開後の経過時間を検査できません](https://docs.renovatebot.com/key-concepts/minimum-release-age/)。これらは待機期間の検査を解除し、PR に確認事項を表示して手動マージを必須にします。
+- 脆弱性修正は従来どおり自動マージを維持し、`minimumReleaseAge: null` で待機を解除します。更新スケジュールも回避します。利用先で GitHub の Dependency graph と Dependabot alerts を有効にし、Renovate にアラートの読み取り権限を与えてください。
+- [OSV による検知](https://docs.renovatebot.com/configuration-options/#osvvulnerabilityalerts) は実験的機能で、対応する直接依存が対象です。未知の悪意あるコードを必ず検知できるわけではありません。
+- `ignoreScripts: true` と `ignorePlugins: true` で、Renovate が対応するロックファイル更新時のパッケージスクリプトと Composer プラグインを無効にします。
+
+ロックファイル全体の差分と間接依存も確認してください。直接依存が14日経過していても、新しい間接依存が取り込まれる可能性があります。利用先のパッケージマネージャーと CI にも公開後の待機期間やスクリプト実行制限を設定してください。このプリセットの設定は利用先の CI に適用されません。
+
+セルフホストの場合は、[管理者設定](https://docs.renovatebot.com/self-hosted-configuration/) に `allowScripts: false`、`allowPlugins: false`、`allowedCommands: []` を設定してください。`allowedPostUpgradeCommands` は `allowedCommands` の旧名で、どちらも共有プリセットでは有効になりません。
+
+利用先の必須 CI チェックとブランチ保護も設定してください。利用先の設定は共有プリセットを上書きできるため、例外設定もレビューが必要です。待機期間と GitHub Actions の SHA 固定はリスクを減らしますが、安全性を保証するものではありません。
+
 ## 貢献方法
 
 問題や課題が発見されたら Issue を作成するか Pull Request を作成していただけると幸いです。

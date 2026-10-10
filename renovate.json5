@@ -18,10 +18,14 @@
   labels: ["renovate"],
   // Supply chain hardening: リリース即攻撃（xz-utils / npm worm 等）を14日間ソークで減速
   minimumReleaseAge: "14 days",
+  // 公開日時が不明な更新は保留し、待機期間中はブランチも作成しない
+  minimumReleaseAgeBehaviour: "timestamp-required",
+  internalChecksFilter: "strict",
   // OSV.dev を検知ソースに追加（GitHub Advisory 単一ソース依存の緩和）
   osvVulnerabilityAlerts: true,
-  // Renovate 自身が任意コマンドを実行しないことを明示
-  allowedPostUpgradeCommands: [],
+  // ロックファイル更新時のパッケージスクリプトと Composer プラグインを無効化
+  ignoreScripts: true,
+  ignorePlugins: true,
   major: {
     addLabels: ["major"],
     // メジャー更新は目視レビュー必須（悪意のあるメジャー リリース対策）
@@ -37,7 +41,7 @@
     automerge: true,
     labels: ["security"],
     // セキュリティ修正は 14日ソークを上書きして即適用（防御破綻防止）
-    minimumReleaseAge: "0 days",
+    minimumReleaseAge: null,
     // 週末スケジュール制約を解除（緊急性優先）
     schedule: ["at any time"],
   },
@@ -186,6 +190,20 @@
       matchUpdateTypes: ["replacement"],
       automerge: false,
       addLabels: ["replacement"],
+    },
+    {
+      // バージョンを解決できない初回 SHA 固定では待機検査が省略される場合がある
+      matchUpdateTypes: ["pinDigest"],
+      automerge: false,
+    },
+    {
+      // これらの更新は公開日時の検査対象外。手動レビューで依存の変更を確認する
+      matchUpdateTypes: ["pin", "replacement", "lockFileMaintenance", "lockfileUpdate", "rollback", "bump"],
+      minimumReleaseAge: null,
+      automerge: false,
+      prBodyNotes: [
+        "This update does not enforce minimumReleaseAge. Review changed dependencies, release dates, and package provenance before merging.",
+      ],
     },
   ],
 }

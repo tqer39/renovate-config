@@ -90,9 +90,27 @@ The configuration file cannot be placed anywhere other than the root of the repo
 | `separateMultipleMajor` | Create separate PRs for each major version bump |
 | `dependencyDashboard` | Enable dependency dashboard |
 | `labels` | PR labels: base `renovate`, plus one of `major`/`minor`/`patch` based on update type |
-| `pre-commit` | Enable pre-commit manager |
+| `minimumReleaseAge` | Wait 14 days before proposing ordinary releases |
+| `minimumReleaseAgeBehaviour` | Require a release timestamp; hold updates with unknown publication dates |
+| `internalChecksFilter` | Strict filtering prevents branches and PRs before the waiting period passes |
+| `ignoreScripts` / `ignorePlugins` | Disable supported package manager scripts and Composer plugins during Renovate lockfile updates |
+| `osvVulnerabilityAlerts` | Enable experimental OSV alerts for supported direct dependencies |
 | `vulnerabilityAlerts` | Security vulnerability alerts with auto-merge and `security` label |
 | `packageRules` | Package-specific rules for GitHub Actions, Node.js, Python, etc. |
+
+### Supply chain protection
+
+Ordinary releases wait 14 days. Major updates and replacements require manual merging. Updates without a release timestamp remain pending in the Dependency Dashboard, including digest updates when their datasource cannot supply a timestamp.
+
+Initial digest pinning (`pinDigest`) also requires manual merging because the age check can be skipped when the current reference cannot be resolved to a versioned release.
+
+Renovate [cannot enforce release age](https://docs.renovatebot.com/key-concepts/minimum-release-age/) for `pin`, `replacement`, `lockFileMaintenance`, `lockfileUpdate`, `rollback`, or `bump` updates. These updates bypass the age check and require manual merging, with a review reminder in the PR. Review the full lockfile diff and transitive dependencies: a mature direct dependency can still resolve to newly published transitive packages. Configure release-age restrictions in the consumer's package manager and CI as well.
+
+Vulnerability fixes retain automatic merging and bypass the waiting period (`minimumReleaseAge: null`) and update schedule. Enable GitHub Dependency graph and Dependabot alerts, and grant Renovate read access to alerts. [OSV detection](https://docs.renovatebot.com/configuration-options/#osvvulnerabilityalerts) is experimental and covers supported direct dependencies; it does not guarantee detection of unknown malicious code.
+
+`ignoreScripts: true` and `ignorePlugins: true` restrict execution during Renovate's supported lockfile updates. They do not configure consumer CI. For self-hosted Renovate, keep `allowScripts: false`, `allowPlugins: false`, and `allowedCommands: []` in the [administrator configuration](https://docs.renovatebot.com/self-hosted-configuration/). `allowedPostUpgradeCommands` is the former name of `allowedCommands`; neither option belongs in a repository preset.
+
+Keep required CI checks and branch protection enabled in each consumer repository. Consumers can override this shared preset; review any exceptions. The waiting period and SHA pinning reduce risk but cannot guarantee that a package or Action is safe.
 
 ## Development
 
@@ -109,6 +127,12 @@ lefthook install      # .git/hooks/pre-commit に lefthook を登録
 
 ```bash
 lefthook run pre-commit --all-files
+```
+
+The Renovate hook uses version `44.149.1`, disables installation scripts, validates both preset files as repository configuration, and runs regression tests with Renovate's rule engine. Run it independently with:
+
+```bash
+lefthook run pre-commit --all-files --job renovate-config-validator
 ```
 
 ## Contribution
