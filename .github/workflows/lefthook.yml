@@ -27,3 +27,15 @@ jobs:
 
       - name: Run lefthook
         run: lefthook run pre-commit --all-files
+
+  workflow-result:
+    name: workflow-result
+    needs: lint
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Check lint result
+        env:
+          LINT_RESULT: ${{ needs.lint.result }}
+        run: test "$LINT_RESULT" = success
