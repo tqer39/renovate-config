@@ -67,19 +67,31 @@ test('updates without release-age support require manual review, even after pack
   }
 });
 
-test('digest updates wait for release age; initial digest pinning requires manual review', async () => {
+test('digest updates still wait for release age and require timestamps', async () => {
   const input = dependency('actions/checkout', 'github-actions', 'github-tags');
-  for (const updateType of ['digest', 'pinDigest']) {
-    for (const timestamp of [daysAgo(1), undefined]) {
-      const update = { updateType };
-      await applyMinimumReleaseAgeToDigestUpdate(update, input, {}, true, timestamp);
-      assert.equal(update.pendingChecks, true);
-    }
-    const update = { updateType };
-    await applyMinimumReleaseAgeToDigestUpdate(update, input, {}, true, daysAgo(15));
-    assert.notEqual(update.pendingChecks, true);
+  for (const timestamp of [daysAgo(1), undefined]) {
+    const update = { updateType: 'digest' };
+    await applyMinimumReleaseAgeToDigestUpdate(update, input, {}, true, timestamp);
+    assert.equal(update.pendingChecks, true);
   }
-  assert.equal((await resolveUpdateTypeConfig(input, 'pinDigest')).automerge, false);
+  const update = { updateType: 'digest' };
+  await applyMinimumReleaseAgeToDigestUpdate(update, input, {}, true, daysAgo(15));
+  assert.notEqual(update.pendingChecks, true);
+});
+
+test('initial digest pins can reach manual review without release timestamps', async () => {
+  const input = dependency('actions/checkout', 'github-actions', 'github-tags');
+  for (const resolved of [true, false]) {
+    for (const timestamp of [daysAgo(1), undefined, daysAgo(15)]) {
+      const update = { updateType: 'pinDigest' };
+      await applyMinimumReleaseAgeToDigestUpdate(update, input, {}, resolved, timestamp);
+      assert.notEqual(update.pendingChecks, true);
+    }
+  }
+  const effective = await resolveUpdateTypeConfig(input, 'pinDigest');
+  assert.equal(effective.automerge, false);
+  assert.equal(effective.minimumReleaseAge, null);
+  assert.ok(effective.prBodyNotes.some((note) => note.includes('Verify the pinned commit')));
 });
 
 test('vulnerability overrides bypass release-age checks and preserve automatic merging', async () => {

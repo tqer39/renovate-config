@@ -192,9 +192,13 @@
       addLabels: ["replacement"],
     },
     {
-      // バージョンを解決できない初回 SHA 固定では待機検査が省略される場合がある
+      // 初回 SHA 固定は日時不明でも PR を作り、固定先を手動レビューする
       matchUpdateTypes: ["pinDigest"],
+      minimumReleaseAge: null,
       automerge: false,
+      prBodyNotes: [
+        "Initial digest pinning bypasses minimumReleaseAge. Verify the pinned commit or image digest and package provenance before merging.",
+      ],
     },
     {
       // これらの更新は公開日時の検査対象外。手動レビューで依存の変更を確認する

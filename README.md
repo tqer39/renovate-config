@@ -102,7 +102,7 @@ The configuration file cannot be placed anywhere other than the root of the repo
 
 Ordinary releases wait 14 days. Major updates and replacements require manual merging. Updates without a release timestamp remain pending in the Dependency Dashboard, including digest updates when their datasource cannot supply a timestamp.
 
-Initial digest pinning (`pinDigest`) also requires manual merging because the age check can be skipped when the current reference cannot be resolved to a versioned release.
+Initial digest pinning (`pinDigest`) bypasses the age check so a missing release timestamp does not block the manual-review PR. Manual merging is required; verify the pinned commit or image digest and package provenance. Subsequent digest updates (`digest`) retain the 14-day waiting period and timestamp requirement.
 
 Renovate [cannot enforce release age](https://docs.renovatebot.com/key-concepts/minimum-release-age/) for `pin`, `replacement`, `lockFileMaintenance`, `lockfileUpdate`, `rollback`, or `bump` updates. These updates bypass the age check and require manual merging, with a review reminder in the PR. Review the full lockfile diff and transitive dependencies: a mature direct dependency can still resolve to newly published transitive packages. Configure release-age restrictions in the consumer's package manager and CI as well.
 
