@@ -1,27 +1,23 @@
 ---
-name: "Improvement Request"
-about: "Suggest an improvement for this project"
+name: "改善提案"
+about: "このプロジェクトへの改善案を提案してください"
 title: ""
 labels: "enhancement"
 assignees: ""
 ---
 
-## Description
+## 内容
 
-<!-- Describe the improvement you would like to see. -->
 <!-- 改善内容を記載してください。 -->
 
-## Steps to Reproduce
+## 再現手順
 
-<!-- If applicable, describe the steps to reproduce the issue. -->
 <!-- 該当する場合、再現手順を記載してください。 -->
 
-## Expected Behavior
+## 期待する動作
 
-<!-- Describe what you expect to happen. -->
 <!-- 期待される動作を記載してください。 -->
 
-## Additional Context
+## 補足情報
 
-<!-- Add any other context or screenshots about the feature request here. -->
 <!-- その他のコンテキストやスクリーンショットを記載してください。 -->

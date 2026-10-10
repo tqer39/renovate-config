@@ -1,37 +1,31 @@
 ---
-name: "Bug Report"
-about: "Report a bug to help us improve"
+name: "不具合報告"
+about: "不具合の詳細と再現手順を報告してください"
 title: ""
 labels: "bug"
 assignees: ""
 ---
 
-## Description
+## 内容
 
-<!-- Describe the bug in detail. -->
 <!-- バグの詳細を記載してください。 -->
 
-## Steps to Reproduce
+## 再現手順
 
-<!-- Provide the steps to reproduce the bug. -->
 <!-- バグを再現する手順を記載してください。 -->
 
-## Expected Behavior
+## 期待する動作
 
-<!-- Describe what you expected to happen. -->
 <!-- 期待される動作を記載してください。 -->
 
-## Actual Behavior
+## 実際の動作
 
-<!-- Describe what actually happened. -->
 <!-- 実際に発生した動作を記載してください。 -->
 
-## Screenshots
+## スクリーンショット
 
-<!-- If applicable, add screenshots to help explain your problem. -->
 <!-- 該当する場合、問題を説明するスクリーンショットを追加してください。 -->
 
-## Additional Context
+## 補足情報
 
-<!-- Add any other context about the problem here. -->
 <!-- その他のコンテキストを記載してください。 -->

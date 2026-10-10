@@ -1,12 +1,12 @@
 <p align="center">
   <a href="">
-    <img src="./header.jpg" alt="header" width="100%">
+    <img src="./header.jpg" alt="Renovate 設定のヘッダー画像" width="100%">
   </a>
-  <h1 align="center">Renovate Config</h1>
+  <h1 align="center">Renovate 共通設定</h1>
 </p>
 
 <p align="center">
-  <i>このリポジトリには、依存関係の更新ツールである Renovate の設定ファイルを共通化してまとめて置くことで複数のリポジトリから参照して使用することが可能なリポジトリです。</i>
+  <i>Renovate の設定を共通化し、複数のリポジトリから参照して利用できるようにまとめたリポジトリです。</i>
 </p>
 
 ## 使い方
@@ -62,13 +62,13 @@ sequenceDiagram
     tqer39/renovate-config->>renovate.json: 設定を返す
 ```
 
-## renovate 設定の説明
+## Renovate 設定の説明
 
 設定ファイルはリポジトリのルート以外では配置できません。
 
 | ファイル名 | 説明 |
 | --------- | ----------- |
-| [default.json](../default.json) | 外部リポジトリ用のエントリーポイント。`renovate.json5` を extends します。 |
+| [default.json](../default.json) | 外部リポジトリ用のエントリーポイント。`renovate.json5` を継承します。 |
 | [renovate.json5](../renovate.json5) | すべての Renovate 設定を含むメイン設定ファイル。 |
 
 ### `renovate.json5` の主要な設定項目

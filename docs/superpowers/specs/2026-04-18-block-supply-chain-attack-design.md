@@ -1,4 +1,4 @@
-# Design: Block Supply Chain Attack via Renovate Hardening
+# 設計書：Renovate の設定強化によるサプライチェーン攻撃対策
 
 - 日付: 2026-04-18
 - ブランチ: `feature/block-supply-chain-attack`
@@ -47,7 +47,7 @@
    separateMultipleMajor: true,
    dependencyDashboard: true,
    labels: ["renovate"],
-+  // Supply chain hardening: リリース即攻撃（xz-utils / npm worm 等）を14日間ソークで減速
++  // サプライチェーン攻撃対策: リリース即攻撃（xz-utils / npm worm 等）を14日間ソークで減速
 +  minimumReleaseAge: "14 days",
 +  // OSV.dev を検知ソースに追加（GitHub Advisory 単一ソース依存の緩和）
 +  osvVulnerabilityAlerts: true,
@@ -128,9 +128,9 @@
 
 ### E2E 検証
 
-1. **Step A（変更前）**: 任意の consumer リポジトリ（例: `blog` / `edu-quest`）の Dependency Dashboard を記録
-2. **Step B**: この PR を main にマージ
-3. **Step C（24 時間後）**: 同 consumer の Dashboard を確認
+1. **手順 A（変更前）**: 任意の consumer リポジトリ（例: `blog` / `edu-quest`）の Dependency Dashboard を記録
+2. **手順 B**: この PR を main にマージ
+3. **手順 C（24 時間後）**: 同 consumer の Dashboard を確認
    - ✅ リリース日 < 14 日前のパッケージに対する PR が存在しない
    - ✅ 新規 PR のリリース日がすべて ≥14 日前
    - ✅ 人工的に脆弱性アラートを発生させた場合、14 日待たず即 PR 化される（必要なら `npm audit` 相当で既知 CVE を含む古い依存を一時的に入れて試験）
