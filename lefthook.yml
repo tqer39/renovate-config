@@ -4,8 +4,10 @@ pre-commit:
   parallel: true
   jobs:
     - name: renovate-config-validator
-      glob: "renovate.json5"
-      run: npx --yes --package=renovate -- renovate-config-validator {staged_files}
+      glob: "{renovate.json5,default.json,tests/*.mjs,lefthook.yml}"
+      run: >-
+        npm_config_ignore_scripts=true npx --yes --package=renovate@44.149.1
+        -c 'renovate-config-validator --strict --no-global renovate.json5 default.json && node --test tests/*.test.mjs'
 
     - name: biome-format
       glob: "*.{js,jsx,ts,tsx,json,jsonc}"

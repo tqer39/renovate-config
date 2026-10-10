@@ -1,9 +1,9 @@
-# Spec: prek から lefthook への移行（Phase 1）
+# 設計書：prek から lefthook への移行（第1段階）
 
-- Date: 2026-04-18
-- Topic: `ref-pre-commit`
-- Branch: `ref/pre-commit-260418-4e5ec3`
-- Repo: `tqer39/renovate-config`
+- 日付: 2026-04-18
+- テーマ: `ref-pre-commit`
+- ブランチ: `ref/pre-commit-260418-4e5ec3`
+- リポジトリ: `tqer39/renovate-config`
 
 ## 1. 背景と目的
 
@@ -18,18 +18,18 @@
 
 ## 2. スコープ
 
-### 含まれるもの (Phase 1)
+### 含まれるもの (第1段階)
 
 現行 13 フックのうち、以下 4 つのみを `lefthook.yml` に移植する。
 
-| Hook | 役割 | 優先理由 |
+| フック | 役割 | 優先理由 |
 | --- | --- | --- |
 | `renovate-config-validator` | `renovate.json5` 検証 | このリポの本分 |
 | `biome-format` | JSON/TS/YAML フォーマット | Rust 製で並列の恩恵大 |
 | `actionlint` | GitHub Actions lint | Go 製で軽量 |
 | `shellcheck` | シェルスクリプト lint | Go 呼び出しの外部バイナリ |
 
-### 含まれないもの (Phase 2 以降に先送り)
+### 含まれないもの (第2段階以降に先送り)
 
 - prek builtin 相当のハイジーン系: `check-added-large-files` / `end-of-file-fixer` / `mixed-line-ending` / `trailing-whitespace`
 - `cspell` / `markdownlint-cli2` / `textlint` / `prettier` (YAML 専用) / `detect-aws-credentials` / `detect-private-key`
@@ -44,22 +44,22 @@
 
 ### 追加するファイル
 
-| Path | 内容 |
+| パス | 内容 |
 | --- | --- |
-| `lefthook.yml` | Phase 1 の 4 フック定義（`pre-commit` ステージ、`parallel: true`） |
+| `lefthook.yml` | 第1段階の 4 フック定義（`pre-commit` ステージ、`parallel: true`） |
 | `mise.toml` | `lefthook` / `actionlint` / `shellcheck` / `biome` / `node` を [tools] に記載 |
 | `.github/workflows/lefthook.yml` | CI ワークフロー。`mise-action` → `lefthook run pre-commit --all-files` |
 
 ### 削除するファイル
 
-| Path | 理由 |
+| パス | 理由 |
 | --- | --- |
-| `.pre-commit-config.yaml` | Phase 1 で全 4 フックを lefthook へ移すため即削除。Phase 2 以降も戻さない |
+| `.pre-commit-config.yaml` | 第1段階で全 4 フックを lefthook へ移すため即削除。第2段階以降も戻さない |
 | `.github/workflows/prek.yml` | 旧 CI。`lefthook.yml` に一本化 |
 
 ### 変更するファイル
 
-| Path | 変更内容 |
+| パス | 変更内容 |
 | --- | --- |
 | `README.md` | 開発者向けセットアップ手順を `mise install` + `lefthook install` に更新 |
 | `renovate.json5` | `pre-commit` manager を無効化し、`mise` manager を有効化 |
@@ -113,7 +113,7 @@ node = "lts"
 
 設計根拠:
 
-- Phase 1 では `latest` を採用し、Phase 2 で Renovate の mise manager と versioning を整えた時点でバージョンピン
+- 第1段階では `latest` を採用し、第2段階で Renovate の mise manager と versioning を整えた時点でバージョンピン
 - `node = "lts"` は `npx` 経由の `renovate-config-validator` 実行に必要
 - ワークスペース共通 CLAUDE.md の「mise で言語・ツールを管理」方針に準拠
 
@@ -194,13 +194,13 @@ PR push
 ## 6. エラーハンドリング
 
 - ツール未インストール（ローカル）: `mise install` を README に明記。未実行なら `lefthook` 本体が exit で失敗 → `mise install` 案内
-- CI キャッシュミス: `mise-action` の内部キャッシュに任せる（Phase 1 では個別キャッシュ設定しない）
-- `npx` ネットワーク失敗: CI で `npx --yes --package=renovate` が断続失敗する場合は Phase 2 でキャッシュ導入を検討
+- CI キャッシュミス: `mise-action` の内部キャッシュに任せる（第1段階では個別キャッシュ設定しない）
+- `npx` ネットワーク失敗: CI で `npx --yes --package=renovate` が断続失敗する場合は第2段階でキャッシュ導入を検討
 - ロック競合: lefthook は並列実行時のジョブ間共有リソース無し（設計上衝突しない）
 
 ## 7. 検証方法
 
-以下を順に実施し、全て成功したら Phase 1 完了とする。
+以下を順に実施し、全て成功したら第1段階完了とする。
 
 1. **ローカル install 検証**
    - `mise install` が成功
@@ -217,12 +217,12 @@ PR push
    - 本ブランチの PR で `lefthook` ワークフローが green
    - `prek` ワークフローが存在しない（GH checks 一覧に出ない）
 5. **後続 PR で Renovate が動くこと**
-   - `mise.toml` 内のツール更新 PR が生成されるか Phase 1 完了後に観察（必要なら Phase 2 で調整）
+   - `mise.toml` 内のツール更新 PR が生成されるか第1段階完了後に観察（必要なら第2段階で調整）
 
 ## 8. ロールアウト計画
 
-- **Phase 1（本 spec）**: 上記 4 フック + CI 切替 + README 更新 + renovate.json5 最小調整
-- **Phase 2（別 spec）**: C/D カテゴリのフック移植、`pre-push` / `commit-msg` 検討、mise バージョンピン、CI キャッシュ最適化
+- **第1段階（本設計書）**: 上記 4 フック + CI 切替 + README 更新 + renovate.json5 最小調整
+- **第2段階（別の設計書）**: C/D カテゴリのフック移植、`pre-push` / `commit-msg` 検討、mise バージョンピン、CI キャッシュ最適化
 
 ## 9. オープン事項（実装フェーズで確定）
 
@@ -235,6 +235,6 @@ PR push
 ## 10. 参考リンク
 
 - lefthook 公式: <https://lefthook.dev/>
-- lefthook configuration: <https://lefthook.dev/configuration/>
+- lefthook の設定: <https://lefthook.dev/configuration/>
 - mise 公式: <https://mise.jdx.dev/>
-- Renovate config validator: <https://docs.renovatebot.com/config-validation/>
+- Renovate の設定検証: <https://docs.renovatebot.com/config-validation/>

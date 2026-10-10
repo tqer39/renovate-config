@@ -1,20 +1,20 @@
 <p align="center">
   <a href="">
-    <img src="./docs/header.jpg" alt="header" width="100%">
+    <img src="./docs/header.jpg" alt="Renovate 設定のヘッダー画像" width="100%">
   </a>
-  <h1 align="center">Renovate Config</h1>
+  <h1 align="center">Renovate 共通設定</h1>
 </p>
 
 <p align="center">
-  <i>This repository is a repository that allows you to refer to and use Renovate configuration files from multiple repositories by consolidating them.</i>
+  <i>Renovate の設定を共通化し、複数のリポジトリから参照して利用できるようにまとめたリポジトリです。</i>
 </p>
 
 ---
 
-## Usage
+## 使い方
 
-1. Create a `renovate.json` file in the root directory of your project.
-2. Add the following settings to the `renovate.json` file.
+1. プロジェクトのルートディレクトリに `renovate.json` ファイルを作成します。
+2. `renovate.json` ファイルに以下の設定を追加します。
 
 ```json
 {
@@ -24,10 +24,10 @@
 }
 ```
 
-## Customize settings for each repository
+## リポジトリごとに設定をカスタマイズする場合
 
-1. Create a `renovate.json` file in the root directory of your project.
-2. Add the following settings to the `renovate.json` file.
+1. プロジェクトのルートディレクトリに `renovate.json` ファイルを作成します。
+2. `renovate.json` ファイルに以下の設定を追加します。
 
 ```json
 {
@@ -43,58 +43,79 @@
 }
 ```
 
-### If you want to customize the common settings of this repository for your own use
+### 共通設定を自分用にカスタマイズする場合
 
-1. Fork this repository.
-2. Add the settings to the `renovate.json` file using the URL of the forked repository.
+1. このリポジトリをフォークします。
+2. フォークしたリポジトリの URL を使って `renovate.json` ファイルに設定を追加します。
 
 ```json
 {
   "extends": [
-    "github>Your GitHub username/renovate-config"
+    "github>あなたのGitHubユーザー名/renovate-config"
   ]
 }
 ```
 
-## Processing contents
+## 処理内容
 
 ```mermaid
 sequenceDiagram
-    renovate.json->>tqer39/renovate-config: Load common settings
-    tqer39/renovate-config->>renovate.json: Return settings
+    renovate.json->>tqer39/renovate-config: 共通の設定を読み込み
+    tqer39/renovate-config->>renovate.json: 設定を返す
 ```
 
-## Description of Renovate settings
+## Renovate 設定の説明
 
-The configuration file cannot be placed anywhere other than the root of the repository.
+設定ファイルはリポジトリのルートに配置します。
 
-| File Name | Description |
+| ファイル名 | 説明 |
 | --------- | ----------- |
-| [default.json](./default.json) | Entry point for external repositories. Extends `renovate.json5`. |
-| [renovate.json5](./renovate.json5) | Main configuration file containing all Renovate settings. |
+| [default.json](./default.json) | 外部リポジトリ用のエントリーポイント。`renovate.json5` を継承します。 |
+| [renovate.json5](./renovate.json5) | すべての Renovate 設定を含むメイン設定ファイル。 |
 
-### Main configuration options in `renovate.json5`
+### `renovate.json5` の主要な設定項目
 
-| Option | Description |
+| オプション | 説明 |
 | ------ | ----------- |
-| `extends` | Base presets: `config:recommended` (Renovate 推奨設定), `helpers:pinGitHubActionDigests` (GitHub Actions のバージョン指定をコミット SHA にピン留めし、サプライチェーン攻撃を防止) |
-| `timezone` | Time zone setting (`Asia/Tokyo`) |
-| `schedule` | Update check schedule (weekends 0:00-6:00) |
-| `automerge` | Auto-merge enabled for PRs |
-| `automergeSchedule` | Auto-merge schedule (weekdays 0:00-6:00) |
-| `automergeStrategy` | Merge strategy (`squash`) |
-| `automergeType` | Auto-merge type (`pr`) |
-| `platformAutomerge` | Enable platform-level auto-merge |
-| `prHourlyLimit` | PR creation rate limit (`0` = unlimited) |
-| `separateMajorMinor` | Separate major and minor update PRs |
-| `separateMultipleMajor` | Create separate PRs for each major version bump |
-| `dependencyDashboard` | Enable dependency dashboard |
-| `labels` | PR labels: base `renovate`, plus one of `major`/`minor`/`patch` based on update type |
-| `pre-commit` | Enable pre-commit manager |
-| `vulnerabilityAlerts` | Security vulnerability alerts with auto-merge and `security` label |
-| `packageRules` | Package-specific rules for GitHub Actions, Node.js, Python, etc. |
+| `extends` | 基本プリセット：`config:recommended`（推奨設定）、`helpers:pinGitHubActionDigests`（GitHub Actions をコミット SHA に固定してリスクを軽減） |
+| `timezone` | タイムゾーン設定（`Asia/Tokyo`） |
+| `schedule` | 更新チェックのスケジュール（週末 0:00〜6:00） |
+| `automerge` | PR の自動マージを有効化 |
+| `automergeSchedule` | 自動マージのスケジュール（平日 0:00〜6:00） |
+| `automergeStrategy` | マージ方式（`squash`） |
+| `automergeType` | 自動マージの種類（`pr`） |
+| `platformAutomerge` | プラットフォーム側の自動マージを有効化 |
+| `prHourlyLimit` | 1時間あたりの PR 作成上限（`0` は無制限） |
+| `separateMajorMinor` | メジャー更新とマイナー更新の PR を分離 |
+| `separateMultipleMajor` | メジャーバージョンごとに更新 PR を分離 |
+| `dependencyDashboard` | 依存関係ダッシュボードを有効化 |
+| `labels` | PR に `renovate` ラベルと、更新の種類に応じた `major`・`minor`・`patch` ラベルを付与 |
+| `minimumReleaseAge` | 通常のリリースを提案するまで14日間待機 |
+| `minimumReleaseAgeBehaviour` | 公開日時を必須にし、日時が不明な更新を保留 |
+| `internalChecksFilter` | 待機期間が過ぎるまでブランチや PR の作成を抑制 |
+| `ignoreScripts` / `ignorePlugins` | 対応するロックファイル更新時のパッケージスクリプトと Composer プラグインを無効化 |
+| `osvVulnerabilityAlerts` | 対応する直接依存に対して実験的な OSV アラートを有効化 |
+| `vulnerabilityAlerts` | 脆弱性修正の自動マージと `security` ラベルの付与 |
+| `packageRules` | GitHub Actions、Node.js、Python などのパッケージ固有ルール |
 
-## Development
+### サプライチェーン攻撃対策
+
+- 通常のリリースは `minimumReleaseAge: "14 days"` で14日間待機します。`internalChecksFilter: "strict"` により、待機中はブランチや PR を作成しません。
+- `minimumReleaseAgeBehaviour: "timestamp-required"` により、公開日時が不明な更新を保留します。日時を取得できないダイジェスト更新も Dependency Dashboard で保留されます。
+- メジャー更新と依存置換は手動マージが必要です。
+- 初回の SHA 固定（`pinDigest`）は、公開日時が不明でも手動レビュー用の PR を作成できるように待機検査を解除します。手動マージを必須とし、固定先のコミットやイメージダイジェストと入手元を確認してください。固定後のダイジェスト更新（`digest`）には14日待機と公開日時の必須条件を維持します。
+- `pin`、`replacement`、`lockFileMaintenance`、`lockfileUpdate`、`rollback`、`bump` は [公開後の経過時間を検査できません](https://docs.renovatebot.com/key-concepts/minimum-release-age/)。これらは待機期間の検査を解除し、PR に確認事項を表示して手動マージを必須にします。
+- 脆弱性修正は従来どおり自動マージを維持し、`minimumReleaseAge: null` で待機を解除します。更新スケジュールも回避します。利用先で GitHub の Dependency graph と Dependabot alerts を有効にし、Renovate にアラートの読み取り権限を与えてください。
+- [OSV による検知](https://docs.renovatebot.com/configuration-options/#osvvulnerabilityalerts) は実験的機能で、対応する直接依存が対象です。未知の悪意あるコードを必ず検知できるわけではありません。
+- `ignoreScripts: true` と `ignorePlugins: true` で、Renovate が対応するロックファイル更新時のパッケージスクリプトと Composer プラグインを無効にします。
+
+ロックファイル全体の差分と間接依存も確認してください。直接依存が14日経過していても、新しい間接依存が取り込まれる可能性があります。利用先のパッケージマネージャーと CI にも公開後の待機期間やスクリプト実行制限を設定してください。このプリセットの設定は利用先の CI に適用されません。
+
+セルフホストの場合は、[管理者設定](https://docs.renovatebot.com/self-hosted-configuration/) に `allowScripts: false`、`allowPlugins: false`、`allowedCommands: []` を設定してください。`allowedPostUpgradeCommands` は `allowedCommands` の旧名で、どちらも共有プリセットでは有効になりません。
+
+利用先の必須 CI チェックとブランチ保護も設定してください。利用先の設定は共有プリセットを上書きできるため、例外設定もレビューが必要です。待機期間と GitHub Actions の SHA 固定はリスクを減らしますが、安全性を保証するものではありません。
+
+## 開発
 
 このリポジトリの pre-commit フックは [lefthook](https://lefthook.dev/) で管理する。
 
@@ -111,10 +132,16 @@ lefthook install      # .git/hooks/pre-commit に lefthook を登録
 lefthook run pre-commit --all-files
 ```
 
-## Contribution
+Renovate のフックはバージョン `44.149.1` を使用し、インストールスクリプトを無効にします。両プリセットをリポジトリ設定として検証し、Renovate のルール処理を使った回帰テストを実行します。このフックだけを実行するには、以下のコマンドを使います。
 
-If you find any issues or have improvements, please create an Issue or submit a Pull Request.
+```bash
+lefthook run pre-commit --all-files --job renovate-config-validator
+```
 
-## License
+## 貢献方法
 
-This project is licensed under the [MIT License](LICENSE).
+問題や改善案があれば、Issue または PR を作成してください。
+
+## ライセンス
+
+このプロジェクトは [MIT ライセンス](LICENSE) の下で公開されています。
