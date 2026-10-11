@@ -96,7 +96,9 @@ sequenceDiagram
 | `ignoreScripts` / `ignorePlugins` | 対応するロックファイル更新時のパッケージスクリプトと Composer プラグインを無効化 |
 | `osvVulnerabilityAlerts` | 対応する直接依存に対して実験的な OSV アラートを有効化 |
 | `vulnerabilityAlerts` | 脆弱性修正の自動マージと `security` ラベルの付与 |
-| `packageRules` | GitHub Actions、Node.js、Python などのパッケージ固有ルール |
+| `packageRules` | GitHub Actions、Node.js、React、Vite/Vitest、Cloudflare Workers、Python などのパッケージ固有ルール |
+
+npm の minor・patch 更新は、React（型定義を含む）、Vite と Vitest、Cloudflare Workers のツール群（`wrangler`、`@cloudflare/workers-types`、`@cloudflare/vitest-pool-workers`）ごとにまとめます。通常のメジャー更新（セキュリティ更新を除く）は引き続き手動レビューが必要です。
 
 ### サプライチェーン攻撃対策
 

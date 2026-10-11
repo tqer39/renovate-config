@@ -128,6 +128,27 @@
       matchUpdateTypes: ["minor", "patch"],
     },
     {
+      addLabels: ["Node.js", "React"],
+      groupName: "React",
+      matchManagers: ["npm"],
+      matchPackageNames: ["react", "react-dom", "@types/react", "@types/react-dom"],
+      matchUpdateTypes: ["minor", "patch"],
+    },
+    {
+      addLabels: ["Node.js", "testing-tools"],
+      groupName: "Vite and Vitest",
+      matchManagers: ["npm"],
+      matchPackageNames: ["vite", "@vitejs/*", "vitest", "@vitest/*"],
+      matchUpdateTypes: ["minor", "patch"],
+    },
+    {
+      addLabels: ["Node.js", "Cloudflare"],
+      groupName: "Cloudflare Workers tooling",
+      matchManagers: ["npm"],
+      matchPackageNames: ["wrangler", "@cloudflare/workers-types", "@cloudflare/vitest-pool-workers"],
+      matchUpdateTypes: ["minor", "patch"],
+    },
+    {
       addLabels: ["pyenv"],
       allowedVersions: "<3.10",
       major: {
