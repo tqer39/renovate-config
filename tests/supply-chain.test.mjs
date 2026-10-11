@@ -67,6 +67,30 @@ test('updates without release-age support require manual review, even after pack
   }
 });
 
+test('frontend groups apply to npm minor/patch updates and preserve release-age and major review policies', async () => {
+  const groups = {
+    React: ['react', 'react-dom', '@types/react', '@types/react-dom'],
+    'Vite and Vitest': ['vite', '@vitejs/plugin-react', 'vitest', '@vitest/coverage-v8'],
+    'Cloudflare Workers tooling': ['wrangler', '@cloudflare/workers-types', '@cloudflare/vitest-pool-workers'],
+  };
+  for (const [groupName, packages] of Object.entries(groups)) {
+    for (const packageName of packages) {
+      for (const updateType of ['minor', 'patch']) {
+        const effective = await resolveUpdateTypeConfig(dependency(packageName), updateType);
+        assert.equal(effective.groupName, groupName, `${packageName}: ${updateType}`);
+        assert.equal(effective.automerge, true);
+        assert.equal(checkMinimumReleaseAge(effective, daysAgo(1)).isPending, true);
+        assert.equal(checkMinimumReleaseAge(effective, undefined).isPending, true);
+      }
+      assert.equal((await resolveUpdateTypeConfig(dependency(packageName), 'major')).automerge, false);
+    }
+  }
+  const unrelated = await resolveUpdateTypeConfig(dependency('jose'), 'patch');
+  assert.equal(Object.hasOwn(groups, unrelated.groupName), false);
+  const nonNpm = await resolveUpdateTypeConfig(dependency('wrangler', 'mise', 'npm'), 'patch');
+  assert.notEqual(nonNpm.groupName, 'Cloudflare Workers tooling');
+});
+
 test('digest updates still wait for release age and require timestamps', async () => {
   const input = dependency('actions/checkout', 'github-actions', 'github-tags');
   for (const timestamp of [daysAgo(1), undefined]) {

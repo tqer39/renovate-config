@@ -84,7 +84,9 @@ sequenceDiagram
 | `separateMajorMinor` | メジャーとマイナーの更新 PR を分離 |
 | `dependencyDashboard` | 依存関係ダッシュボードを有効化 |
 | `vulnerabilityAlerts` | セキュリティ脆弱性アラート設定 |
-| `packageRules` | GitHub Actions、Node.js、Python などのパッケージ固有ルール |
+| `packageRules` | GitHub Actions、Node.js、React、Vite/Vitest、Cloudflare Workers、Python などのパッケージ固有ルール |
+
+npm の minor・patch 更新は、React（型定義を含む）、Vite と Vitest、Cloudflare Workers のツール群（`wrangler`、`@cloudflare/workers-types`、`@cloudflare/vitest-pool-workers`）ごとにまとめます。メジャー更新は引き続き手動レビューが必要です。これらのルールは kazokubi を含む、デフォルトプリセットを参照するリポジトリに適用されます。
 
 ### サプライチェーン攻撃対策
 
