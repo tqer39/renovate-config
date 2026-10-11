@@ -86,7 +86,7 @@ sequenceDiagram
 | `vulnerabilityAlerts` | セキュリティ脆弱性アラート設定 |
 | `packageRules` | GitHub Actions、Node.js、React、Vite/Vitest、Cloudflare Workers、Python などのパッケージ固有ルール |
 
-npm の minor・patch 更新は、React（型定義を含む）、Vite と Vitest、Cloudflare Workers のツール群（`wrangler`、`@cloudflare/workers-types`、`@cloudflare/vitest-pool-workers`）ごとにまとめます。メジャー更新は引き続き手動レビューが必要です。これらのルールは kazokubi を含む、デフォルトプリセットを参照するリポジトリに適用されます。
+npm の minor・patch 更新は、React（型定義を含む）、Vite と Vitest、Cloudflare Workers のツール群（`wrangler`、`@cloudflare/workers-types`、`@cloudflare/vitest-pool-workers`）ごとにまとめます。通常のメジャー更新（セキュリティ更新を除く）は引き続き手動レビューが必要です。
 
 ### サプライチェーン攻撃対策
 
