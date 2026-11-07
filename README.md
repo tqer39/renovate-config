@@ -98,6 +98,8 @@ sequenceDiagram
 | `vulnerabilityAlerts` | 脆弱性修正の自動マージと `security` ラベルの付与 |
 | `packageRules` | GitHub Actions、Node.js、React、Vite/Vitest、Cloudflare Workers、Python などのパッケージ固有ルール |
 
+GitHub Actions の minor・patch 更新は、PR ごとに実行される CI の回数を減らすため 1 つの PR（`GitHub Actions`）にまとめます。メジャー更新、初回の SHA 固定（`pinDigest`）、ダイジェスト更新（`digest`）はまとめません。
+
 npm の minor・patch 更新は、React（型定義を含む）、Vite と Vitest、Cloudflare Workers のツール群（`wrangler`、`@cloudflare/workers-types`、`@cloudflare/vitest-pool-workers`）ごとにまとめます。通常のメジャー更新（セキュリティ更新を除く）は引き続き手動レビューが必要です。
 
 ### サプライチェーン攻撃対策

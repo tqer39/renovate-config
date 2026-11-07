@@ -91,6 +91,26 @@ test('frontend groups apply to npm minor/patch updates and preserve release-age 
   assert.notEqual(nonNpm.groupName, 'Cloudflare Workers tooling');
 });
 
+test('GitHub Actions minor/patch updates share one group without changing major or digest policies', async () => {
+  for (const packageName of ['actions/checkout', 'jdx/mise-action']) {
+    const input = dependency(packageName, 'github-actions', 'github-tags');
+    for (const updateType of ['minor', 'patch']) {
+      const effective = await resolveUpdateTypeConfig(input, updateType);
+      assert.equal(effective.groupName, 'GitHub Actions', `${packageName}: ${updateType}`);
+      assert.equal(effective.automerge, true);
+      assert.equal(checkMinimumReleaseAge(effective, daysAgo(1)).isPending, true);
+    }
+    for (const updateType of ['major', 'digest', 'pinDigest']) {
+      const effective = await resolveUpdateTypeConfig(input, updateType);
+      assert.notEqual(effective.groupName, 'GitHub Actions', `${packageName}: ${updateType}`);
+    }
+    assert.equal((await resolveUpdateTypeConfig(input, 'major')).automerge, false);
+    assert.equal((await resolveUpdateTypeConfig(input, 'pinDigest')).automerge, false);
+  }
+  const npm = await resolveUpdateTypeConfig(dependency('dayjs'), 'patch');
+  assert.notEqual(npm.groupName, 'GitHub Actions');
+});
+
 test('digest updates still wait for release age and require timestamps', async () => {
   const input = dependency('actions/checkout', 'github-actions', 'github-tags');
   for (const timestamp of [daysAgo(1), undefined]) {
