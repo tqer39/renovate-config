@@ -47,7 +47,9 @@
   },
   packageRules: [
     {
+      // PR ごとに CI が実行されるため、アクションの minor / patch 更新は 1 つの PR にまとめる
       addLabels: ["github-actions"],
+      groupName: "GitHub Actions",
       matchManagers: ["github-actions"],
       matchUpdateTypes: ["minor", "patch"],
     },
